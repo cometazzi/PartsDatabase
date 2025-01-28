@@ -1,6 +1,6 @@
-# Jared Doderer Individual Project
+#### Jared Doderer Individual Project
 
-### Problem Statement
+#### Problem Statement
 
 I am an electronics hobbyist, and building devices or just tinkering on things requires a vast array of different parts.  Integrated circuits, transistors, diodes, capacitors, resistors, vacuum tubes and many more.  The problem is, after so many years I have accumulated many many parts, and I can no longer keep track of the inventory in my head.
 
