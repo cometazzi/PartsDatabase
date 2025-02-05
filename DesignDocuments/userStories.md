@@ -13,6 +13,8 @@ As a user, I want to be able to access manufacturer datasheets about a specific 
 ### Consume parts
 As a user, I want to be able to change the parts quantities as I remove or restore parts to the database
 
+-- MVP Ends Here--
+
 ### Login
 As a user, I want to be able to log into the database to use it.
 
