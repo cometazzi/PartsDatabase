@@ -5,17 +5,17 @@
 - [X] Create project structure in intellij and push
 - [X] Add link to list of indie projects in student repo.
 - [X] Complete Problem Statement
-- [ ] Weekly reflection/time log
+- [X] Weekly reflection/time log
 
 ### Week 3
 - [ ] Research possible Web Services/APIs to use
 - [ ] List technologies, versions and how they will be used
 - [ ] Write project plan
-- [ ] Document user stories and select MVP stories
+- [X] Document user stories and select MVP stories
 - [ ] Confirm MVP stories meet Ent Java indie project objectives
-- [ ] Design screens - make sure all MVP user stories are covered
+- [X] Design screens - make sure all MVP user stories are covered
 - [ ] Triple-check for Checkpoint 1
-- [ ] Update journal/time log/reflection - I should probably just use one :)
+- [X] Update journal/time log/reflection - I should probably just use one :)
 
 ### Week 4 - Class topic is Hibernate
 #### This week my focus is the parts search by name or type user story

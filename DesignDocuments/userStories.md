@@ -1,5 +1,7 @@
 # User Stories
 
+The first four user stories are part of the MVP.
+
 ### Find Parts
 As user, I want to be able to search the database by category (part type) so I can see a listing of all the parts of
   that type.  I wish to see quantity, cost, package types or other information about each of the listed parts at a glance.
@@ -8,7 +10,7 @@ As user, I want to be able to search the database by category (part type) so I c
 As a user, I want to be able to search the database by a specific part number to see information on the stock of that part
 
 ### Read Datasheets
-As a user, I want to be able to access manufacturer datasheets about a specific part
+As a user, I want to be able to view design specifications, and access manufacturer datasheets about a specific part
 
 ### Consume parts
 As a user, I want to be able to change the parts quantities as I remove or restore parts to the database
@@ -25,8 +27,7 @@ As a user, I want to be able to manage my profile and any settings (i.e. light m
 As an administrator, I want to be able to add, update, and delete users.
 
 ### Parts Administration
-As an administrator, I want to be able to manage parts quantities, and add or remove parts entries entirely.
+As an administrator, I want to be able to manage parts quantities, attributes, and add or remove parts entries entirely.
 
 ### Activity Logging
-
-As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts quantity changes, and the creation/deletion of parts entries.
+As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts quantity changes, and the editing/creation/deletion of parts entries and users.
