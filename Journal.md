@@ -19,6 +19,6 @@ Tasks Completed:
 ### Week 3
 2/4/2025
 
-* Added missing files (Weekly Reflection, Journal.md, Readme.md)
+* Added missing files (Journal.md, Readme.md)
 * Created screen design, hashed out some logistical choices
 * Hashed out some illogistical choices as well.
