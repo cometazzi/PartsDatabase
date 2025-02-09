@@ -25,8 +25,8 @@ As a user, I want to be able to manage my profile and any settings (i.e. light m
 As an administrator, I want to be able to add, update, and delete users.
 
 ### Parts Administration
-As an administrator, I want to be able to manage parts quantities, and add or remove parts categories entirely.
+As an administrator, I want to be able to manage parts quantities, and add or remove parts entries entirely.
 
 ### Activity Logging
 
-As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts quantity changes, and the creation/deletion of parts categories.
+As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts quantity changes, and the creation/deletion of parts entries.
