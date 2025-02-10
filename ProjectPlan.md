@@ -19,7 +19,7 @@
 
 ### Week 4 - Class topic is Hibernate
 #### This week my focus is the parts search by name or type user story
-- [ ] First cut at database design
+- [X] First cut at database design
 - [ ] Create the dev version of the database - at least the part category tables
 - [ ] Create Parts entity
 - [ ] Create a class to perform CRUD on Parts - partsDAO
