@@ -38,3 +38,5 @@ Some thoughts, for better or for worse:
 
 Something to consider, not all items have datasheets, like resistors, knobs, switches, etc.  The "datasheet_url" for these items
   would instead point to a non-working button that says "no datasheet" or similar.
+
+Also, this is a LOT of data to have to compile and type in.  Maybe some of these fields aren't necessary, like vendor.
