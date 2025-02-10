@@ -24,11 +24,14 @@
 - [ ] Create Parts entity
 - [ ] Create a class to perform CRUD on Parts - partsDAO
 - [ ] Create the config files for the DB connection info (dev and test)
+- [ ] Create SQL code to delete, create and load data into database
 - [ ] Create a test version of the database for unit testing
 - [ ] Create unit tests for the partsDAO class
 - [ ] Create a class for the DB connection business
 - [ ] Create JSP for searching parts
 - [ ] Create JSP for showing parts search results
+- [ ] Create JSP for editing parts entries (Admin)
+- [ ] Create JSP for adding parts entries (Admin)
 - [ ] Create controller to route to parts search jsp
 - [ ] Update weekly reflection
 
