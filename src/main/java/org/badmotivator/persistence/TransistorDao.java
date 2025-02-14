@@ -89,7 +89,7 @@ public class TransistorDao {
 
     /**
      * Get transistor by property (exact match)
-     * sample usage: getByPropertyEqual("lastname", "Curry")
+     * sample usage: getByPropertyEqual("partNum", "2N3904")
      */
     public List<Transistor> getByPropertyEqual(String propertyName, String value) {
         Session session = sessionFactory.openSession();
@@ -108,7 +108,7 @@ public class TransistorDao {
 
     /**
      * Get transistor by property (like)
-     * sample usage: getByPropertyLike("lastname", "C")
+     * sample usage: getByPropertyLike("partNum", "2N")
      */
     public List<Transistor> getByPropertyLike(String propertyName, String value) {
         Session session = sessionFactory.openSession();
