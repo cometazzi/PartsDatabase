@@ -8,17 +8,29 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
+/**
+ * The type Transistor dao test.
+ */
 class TransistorDaoTest {
 
 
+    /**
+     * The Transistor dao.
+     */
     TransistorDao transistorDao;
 
+    /**
+     * Init- runs before each test to reset the database.
+     */
     @BeforeEach
       public void init() {
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
     }
 
+    /**
+     * Tests get by id.
+     */
     @Test
     void getById() {
         transistorDao = new TransistorDao();
@@ -26,6 +38,9 @@ class TransistorDaoTest {
         assertEquals("2N2222", retrievedTransistor.getPartNum());
     }
 
+    /**
+     * Tests an update.
+     */
     @Test
     void update() {
         transistorDao = new TransistorDao();
@@ -37,6 +52,9 @@ class TransistorDaoTest {
         assertEquals("Jumpin' JFETS!", retrievedTransistor.getDescr());
     }
 
+    /**
+     * Inserts a new item into the db, checks to see if it worked.
+     */
     @Test
     void insert() {
         transistorDao = new TransistorDao();
@@ -57,6 +75,9 @@ class TransistorDaoTest {
 
     }
 
+    /**
+     * Deletes an item from the db, tests to see if it's actually gone
+     */
     @Test
     void delete() {
         transistorDao = new TransistorDao();
@@ -66,6 +87,9 @@ class TransistorDaoTest {
 
     }
 
+    /**
+     * Gets all.
+     */
     @Test
     void getAll() {
         transistorDao = new TransistorDao();
@@ -73,6 +97,9 @@ class TransistorDaoTest {
         assertEquals(49, retrievedTransistors.size());
     }
 
+    /**
+     * Gets by property equal.
+     */
     @Test
     void getByPropertyEqual() {
         transistorDao = new TransistorDao();
@@ -80,6 +107,9 @@ class TransistorDaoTest {
         assertEquals(4, foundTransistors.size());
     }
 
+    /**
+     * Gets by property like.
+     */
     @Test
     void getByPropertyLike() {
         transistorDao = new TransistorDao();

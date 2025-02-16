@@ -239,4 +239,19 @@ public class Transistor {
     public void setDatasheetUrl(String datasheetUrl) {
         this.datasheetUrl = datasheetUrl;
     }
+
+    @Override
+    public String toString() {
+        return "Transistor{" +
+                "id=" + id +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", partNum='" + partNum + '\'' +
+                ", technology='" + technology + '\'' +
+                ", descr='" + descr + '\'' +
+                ", qty=" + qty +
+                ", packageName='" + packageName + '\'' +
+                ", cost='" + cost + '\'' +
+                ", datasheetUrl='" + datasheetUrl + '\'' +
+                '}';
+    }
 }
