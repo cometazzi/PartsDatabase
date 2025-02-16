@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.List;
 
 class TransistorDaoTest {
 
@@ -58,17 +59,31 @@ class TransistorDaoTest {
 
     @Test
     void delete() {
+        transistorDao = new TransistorDao();
+        Transistor transistorToDelete = transistorDao.getById(41);  // MPSA13 Darlington Transistor
+        transistorDao.delete(transistorToDelete);
+        assertEquals(null, transistorDao.getById(41));
+
     }
 
     @Test
     void getAll() {
+        transistorDao = new TransistorDao();
+        List <Transistor> retrievedTransistors = transistorDao.getAll();
+        assertEquals(49, retrievedTransistors.size());
     }
 
     @Test
     void getByPropertyEqual() {
+        transistorDao = new TransistorDao();
+        List <Transistor> foundTransistors = transistorDao.getByPropertyEqual("technology", "JFET");
+        assertEquals(4, foundTransistors.size());
     }
 
     @Test
     void getByPropertyLike() {
+        transistorDao = new TransistorDao();
+        List <Transistor> foundTransistors = transistorDao.getByPropertyLike("packageName", "220");
+        assertEquals(9, foundTransistors.size());
     }
 }

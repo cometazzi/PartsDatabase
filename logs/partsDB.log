@@ -1,1 +1,19 @@
 [INFO ] 2025-02-16 11:25:47.208 [main] Database - Database properties loaded
+[INFO ] 2025-02-16 11:33:00.706 [main] Database - Database properties loaded
+[INFO ] 2025-02-16 11:33:13.266 [main] Database - Database properties loaded
+[INFO ] 2025-02-16 11:33:38.245 [main] Database - Database properties loaded
+[INFO ] 2025-02-16 11:33:48.546 [main] Database - Database properties loaded
+[INFO ] 2025-02-16 11:36:47.073 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:36:49.163 [main] TransistorDao - The list of transistors [org.badmotivator.entity.Transistor@75d97e18, org.badmotivator.entity.Transistor@377dbc50, org.badmotivator.entity.Transistor@531ec2ca, org.badmotivator.entity.Transistor@70884875, org.badmotivator.entity.Transistor@7019d619, org.badmotivator.entity.Transistor@2a5c6b76, org.badmotivator.entity.Transistor@ff1f465, org.badmotivator.entity.Transistor@3d88ce0e, org.badmotivator.entity.Transistor@31f7eb8, org.badmotivator.entity.Transistor@4ad1a276, org.badmotivator.entity.Transistor@4a833595, org.badmotivator.entity.Transistor@31006a75, org.badmotivator.entity.Transistor@49122853, org.badmotivator.entity.Transistor@e97f115, org.badmotivator.entity.Transistor@370225c7, org.badmotivator.entity.Transistor@6ac756b, org.badmotivator.entity.Transistor@156324b, org.badmotivator.entity.Transistor@38a38ed4, org.badmotivator.entity.Transistor@1e29a81a, org.badmotivator.entity.Transistor@7b4b8199, org.badmotivator.entity.Transistor@4bbf20d1, org.badmotivator.entity.Transistor@6fced25c, org.badmotivator.entity.Transistor@3cf4dec7, org.badmotivator.entity.Transistor@1b94c789, org.badmotivator.entity.Transistor@299fc582, org.badmotivator.entity.Transistor@305aaedf, org.badmotivator.entity.Transistor@2a425cf5, org.badmotivator.entity.Transistor@17d76ebb, org.badmotivator.entity.Transistor@40b31a16, org.badmotivator.entity.Transistor@25fa6889, org.badmotivator.entity.Transistor@1de73d37, org.badmotivator.entity.Transistor@31693a86, org.badmotivator.entity.Transistor@69d2e517, org.badmotivator.entity.Transistor@1f9a7684, org.badmotivator.entity.Transistor@3b30eec5, org.badmotivator.entity.Transistor@43755e2f, org.badmotivator.entity.Transistor@3d71e10b, org.badmotivator.entity.Transistor@71139e77, org.badmotivator.entity.Transistor@4de91056, org.badmotivator.entity.Transistor@2404abe2, org.badmotivator.entity.Transistor@16cf7fd0, org.badmotivator.entity.Transistor@7bc2bb58, org.badmotivator.entity.Transistor@7e2c6fd6, org.badmotivator.entity.Transistor@7ff6804a, org.badmotivator.entity.Transistor@12aa519b, org.badmotivator.entity.Transistor@7c5c20ed, org.badmotivator.entity.Transistor@6113a26f, org.badmotivator.entity.Transistor@2aac8ad7, org.badmotivator.entity.Transistor@6a4a2090]
+[INFO ] 2025-02-16 11:40:23.150 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:40:25.029 [main] TransistorDao - Searching for transistor with package = 220
+[INFO ] 2025-02-16 11:41:14.242 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:41:16.170 [main] TransistorDao - Searching for transistor with packageName = 220
+[INFO ] 2025-02-16 11:41:23.323 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:41:25.428 [main] TransistorDao - Searching for transistor with packageName = 220
+[INFO ] 2025-02-16 11:42:34.432 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:42:36.435 [main] TransistorDao - Searching for transistor with packageName = 220
+[INFO ] 2025-02-16 11:44:37.613 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:44:39.563 [main] TransistorDao - Searching for transistor with technology = JFET
+[INFO ] 2025-02-16 11:45:03.971 [main] Database - Database properties loaded
+[DEBUG] 2025-02-16 11:45:05.887 [main] TransistorDao - Searching for transistor with technology = JFET
