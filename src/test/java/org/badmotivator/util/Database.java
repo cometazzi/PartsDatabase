@@ -15,7 +15,7 @@ import java.util.Properties;
 
 /**
  * Provides access to the database
- * Created on 8/31/16.
+ * Created on 2/10/2025.
  *
  * @author pwaite
  * @author Alex M - Fall 2019 - added multi-line sql capability
@@ -34,6 +34,7 @@ public class Database implements PropertiesLoader {
 
     /** private constructor prevents instantiating this class anywhere else
      **/
+
     private Database() {
         loadProperties();
 
@@ -45,6 +46,7 @@ public class Database implements PropertiesLoader {
         properties = new Properties();
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
+            logger.info("Database properties loaded");
         } catch (IOException ioe) {
             logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
             // ioe.printStackTrace();

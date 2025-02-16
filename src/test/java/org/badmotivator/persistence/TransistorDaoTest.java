@@ -9,7 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TransistorDaoTest {
 
+
     TransistorDao transistorDao;
+
     @BeforeEach
       public void init() {
         Database database = Database.getInstance();
@@ -25,15 +27,33 @@ class TransistorDaoTest {
 
     @Test
     void update() {
+        transistorDao = new TransistorDao();
+        Transistor retrievedTransistor = transistorDao.getById(40);
+        retrievedTransistor.setQty(70); // original qty is 72
+        retrievedTransistor.setDescr("Jumpin' JFETS!");  // original descr is "N-Channel JFET"
+        transistorDao.update(retrievedTransistor);
+        assertEquals(70, retrievedTransistor.getQty());
+        assertEquals("Jumpin' JFETS!", retrievedTransistor.getDescr());
     }
 
     @Test
     void insert() {
         transistorDao = new TransistorDao();
-        Transistor retrievedTransistor = transistorDao.getById(40);
-        retrievedTransistor.setQty(72);
-        transistorDao.update(retrievedTransistor);
-        assertEquals(72, retrievedTransistor.getQty());
+        Transistor newTransistor = new Transistor();
+        newTransistor.setImageUrl("TO-92.jpg");
+        newTransistor.setPartNum("2N4401");
+        newTransistor.setTechnology("BJT");
+        newTransistor.setDescr("NPN Transistor, Small Signal");
+        newTransistor.setQty(58);
+        newTransistor.setPackageName("TO-92");
+        newTransistor.setCost("0.12");
+        newTransistor.setDatasheetUrl("2N4401.pdf");
+        int newTransistorID = transistorDao.insert(newTransistor);
+
+        assertEquals("2N4401", transistorDao.getById(newTransistorID).getPartNum());
+        assertEquals("BJT", transistorDao.getById(newTransistorID).getTechnology());
+        assertEquals(58, transistorDao.getById(newTransistorID).getQty());
+
     }
 
     @Test
