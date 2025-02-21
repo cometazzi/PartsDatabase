@@ -8,7 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
  *
  * @autho jdoderer
  */
-@Entity
+@Entity(name = "Transistor")
 @Table(name = "transistors")
 public class Transistor {
 
@@ -16,6 +16,12 @@ public class Transistor {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
+    /**
+     * The Package type.
+     */
+    @ManyToOne(fetch = FetchType.EAGER)
+    PackageTypes packageType;
 
     @Column(name = "image_url")
     private String imageUrl;
@@ -32,7 +38,7 @@ public class Transistor {
     @Column(name = "qty")
     private int qty;
 
-    @Column(name = "package")
+    @Column(name = "package_type")
     private String packageName;
 
     @Column(name = "cost")
@@ -41,38 +47,24 @@ public class Transistor {
     @Column(name = "datasheet_url")
     private String datasheetUrl;
 
+    public Transistor() {
+    }
 
-    /**
-     * Instantiate new Transistor object
-     */
-    public Transistor() {}
-
-    /**
-     * Instantiate new Transistor with pre-loaded values
-     *
-     * @param imageUrl     the image url
-     * @param partNum      the part num
-     * @param technology   the technology
-     * @param descr        the descr
-     * @param qty          the qty
-     * @param packageName  the package name
-     * @param cost         the cost
-     * @param datasheetUrl the datasheet url
-     */
-    public Transistor(
-            String imageUrl,
-            String partNum,
-            String technology,
-            String descr,
-            String qty,
-            String packageName,
-            String cost,
-            String datasheetUrl) {
+    public Transistor(PackageTypes packageType,
+                      String imageUrl,
+                      String partNum,
+                      String technology,
+                      String descr,
+                      int qty,
+                      String packageName,
+                      String cost,
+                      String datasheetUrl) {
+        this.packageType = packageType;
         this.imageUrl = imageUrl;
         this.partNum = partNum;
         this.technology = technology;
         this.descr = descr;
-        this.qty = Integer.parseInt(qty);
+        this.qty = qty;
         this.packageName = packageName;
         this.cost = cost;
         this.datasheetUrl = datasheetUrl;
@@ -240,6 +232,23 @@ public class Transistor {
         this.datasheetUrl = datasheetUrl;
     }
 
+    /**
+     * Gets package type.
+     *
+     * @return the package type
+     */
+    public PackageTypes getPackageType() {
+        return packageType;
+    }
+
+    /**
+     * Sets package type.
+     *
+     * @param packageType the package type
+     */
+    public void setPackageType(PackageTypes packageType) {
+        this.packageType = packageType;
+    }
     @Override
     public String toString() {
         return "Transistor{" +
