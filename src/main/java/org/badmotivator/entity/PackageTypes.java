@@ -71,6 +71,7 @@ public class PackageTypes {
      *
      * @return the transistors
      */
+
     public List<Transistor> getTransistors() {
         return transistors;
     }
@@ -80,6 +81,7 @@ public class PackageTypes {
      *
      * @param transistors the transistors
      */
+
     public void setTransistors(List<Transistor> transistors) {
         this.transistors = transistors;
     }

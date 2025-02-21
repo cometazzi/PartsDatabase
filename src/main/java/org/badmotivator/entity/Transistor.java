@@ -237,8 +237,10 @@ public class Transistor {
      *
      * @return the package type
      */
+
     public PackageTypes getPackageType() {
         return packageType;
+
     }
 
     /**
@@ -246,9 +248,13 @@ public class Transistor {
      *
      * @param packageType the package type
      */
+
     public void setPackageType(PackageTypes packageType) {
-        this.packageType = packageType;
+       this.packageType = packageType;
+
     }
+
+
     @Override
     public String toString() {
         return "Transistor{" +
