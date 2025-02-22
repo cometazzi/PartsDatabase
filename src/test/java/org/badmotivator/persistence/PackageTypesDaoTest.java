@@ -1,5 +1,7 @@
 package org.badmotivator.persistence;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.PackageTypes;
 import org.badmotivator.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,6 +13,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PackageTypesDaoTest {
+
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
     void setUp() {

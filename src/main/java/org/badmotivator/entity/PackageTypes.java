@@ -2,6 +2,8 @@ package org.badmotivator.entity;
 
 
 import jakarta.persistence.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 

@@ -1,20 +1,24 @@
 package org.badmotivator.persistence;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.badmotivator.entity.PackageTypes;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * The type Transistor dao test.
  */
 class TransistorDaoTest {
 
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
      * The Transistor dao.
@@ -77,6 +81,33 @@ class TransistorDaoTest {
 
     }
 
+    @Test
+    void insertWithPackageType() {
+        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        PackageTypes packageTypes = packageTypesDao.getById(12);
+
+        transistorDao = new TransistorDao();
+        Transistor newTransistor = new Transistor(
+                packageTypes,
+                "TO-29.jpg",
+                "2N4403",
+                "BJT",
+                "PNP Transistor, Small Signal",
+        72,
+        packageTypes.getId(),
+        "0.12",
+        "2n4403.pdf");
+
+        int newTransistorID = transistorDao.insert(newTransistor);
+
+        Transistor retrievedTransistor = transistorDao.getById(newTransistorID);
+        assertNotNull(retrievedTransistor);
+        assertEquals("2N4403", retrievedTransistor.getPartNum());
+        assertEquals("BJT", retrievedTransistor.getTechnology());
+        assertEquals(72, retrievedTransistor.getQty());
+        assertEquals("TO-92", newTransistor.getPackageType().getPackageName());
+    }
+
     /**
      * Deletes an item from the db, tests to see if it's actually gone
      */
@@ -85,7 +116,7 @@ class TransistorDaoTest {
         transistorDao = new TransistorDao();
         Transistor transistorToDelete = transistorDao.getById(41);  // MPSA13 Darlington Transistor
         transistorDao.delete(transistorToDelete);
-        assertEquals(null, transistorDao.getById(41));
+        assertNull(transistorDao.getById(41));
 
     }
 
@@ -118,6 +149,5 @@ class TransistorDaoTest {
         List<Transistor> foundTransistors = new ArrayList<>();
         foundTransistors = transistorDao.getByPropertyLike("descr", "PNP");
         assertEquals(14, foundTransistors.size());
-
-    }
+     }
 }
