@@ -64,15 +64,17 @@ class TransistorDaoTest {
     @Test
     void insert() {
         transistorDao = new TransistorDao();
-        Transistor newTransistor = new Transistor();
-        newTransistor.setImageUrl("TO-92.jpg");
-        newTransistor.setPartNum("2N4401");
-        newTransistor.setTechnology("BJT");
-        newTransistor.setDescr("NPN Transistor, Small Signal");
-        newTransistor.setQty(58);
-        newTransistor.setPackageName(12);
-        newTransistor.setCost("0.12");
-        newTransistor.setDatasheetUrl("2N4401.pdf");
+        Transistor newTransistor = new Transistor(
+                null,
+                "TO-92.jpg",
+                "2N4401",
+                "BJT",
+                "NPN Transistor, Small Signal",
+                58,
+                12,
+                "0.12",
+                "2N4401.pdf");
+
         int newTransistorID = transistorDao.insert(newTransistor);
 
         assertEquals("2N4401", transistorDao.getById(newTransistorID).getPartNum());
@@ -93,10 +95,10 @@ class TransistorDaoTest {
                 "2N4403",
                 "BJT",
                 "PNP Transistor, Small Signal",
-        72,
-        packageTypes.getId(),
-        "0.12",
-        "2n4403.pdf");
+            72,
+            packageTypes.getId(),
+            "0.12",
+                "2n4403.pdf");
 
         int newTransistorID = transistorDao.insert(newTransistor);
 
