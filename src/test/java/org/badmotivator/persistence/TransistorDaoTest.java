@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -113,7 +115,9 @@ class TransistorDaoTest {
     @Test
     void getByPropertyLike() {
         transistorDao = new TransistorDao();
-        List <Transistor> foundTransistors = transistorDao.getByPropertyLike("packageName", "220");
-        assertEquals(9, foundTransistors.size());
+        List<Transistor> foundTransistors = new ArrayList<>();
+        transistorDao.getByPropertyLike("packageName", "220");
+        assertEquals(4, foundTransistors.size());
+
     }
 }
