@@ -20,20 +20,32 @@
 ### Week 4 - Class topic is Hibernate
 #### This week my focus is the parts search by name or type user story
 - [X] First cut at database design
-- [ ] Create the dev version of the database - at least the part category tables
-- [ ] Create Parts entity
-- [ ] Create a class to perform CRUD on Parts - partsDAO
-- [ ] Create the config files for the DB connection info (dev and test)
-- [ ] Create SQL code to delete, create and load data into database
-- [ ] Create a test version of the database for unit testing
-- [ ] Create unit tests for the partsDAO class
-- [ ] Create a class for the DB connection business
-- [ ] Create JSP for searching parts
-- [ ] Create JSP for showing parts search results
-- [ ] Create JSP for editing parts entries (Admin)
-- [ ] Create JSP for adding parts entries (Admin)
+- [X] Create the dev version of the database - at least the part category tables
+- [X] Create PackageTypes entity
+- [X] Create a class to perform CRUD on PackageTypes - PackageTypesDao
+- [X] Create the config files for the DB connection info (dev and test)
+- [X] Create SQL code to delete, create and load data into database
+- [X] Create a test version of the database for unit testing
+- [X] Create unit tests for the PackageTypes class
+- [X] Create a class for the DB connection business
+- [ ] Update Weekly reflection
+
+### Week 5
+- [ ] Create JSP for searching parts 
+- [ ] Create JSP for showing parts search results (Read user story)
+- [ ] Create JSP for editing or deleting parts entries (Admin) (Update and Delete user stories)
+- [ ] Create JSP for adding parts entries (Admin) (Create user story)
 - [ ] Create controller to route to parts search jsp
 - [ ] Update weekly reflection
+
+### Week 6
+- [ ] Create and populate Capacitors table, create entity, Dao and TestDao.
+- [ ] Create and populate Chipamps table, create entity, Dao and TestDao
+- [ ] Create and populate Diodes table, create entity, Dao and TestDao
+- [ ] Create and populate LinearICs table, create entity, Dao and TestDao
+- [ ] Create and populate LogicICs table, create entity, Dao and TestDao
+- [ ] Create and populate Resistors table, create entity, Dao and TestDao
+- [ ] Test all new items
 
 ### Week 7
 #### Checkpoint 2 is Due: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns)
