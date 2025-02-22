@@ -54,7 +54,7 @@ As an administrator, I want to be able to store data on parts purchases and acqu
   part numbers, costs, sources, and shipping information.
 
 ### Comment on Acquisitions
-As an administrator, I wantt o be able to write comments about particular transactions, so that I can refer to it at a 
+As an administrator, I want to be able to write comments about particular transactions, so that I can refer to it at a 
   later time.
 
 ### Catalogue Purchase Invoices

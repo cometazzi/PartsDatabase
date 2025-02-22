@@ -18,6 +18,8 @@ PartsDatabase is an inventory system to catalogue electronic parts, pieces, modu
     * Maven
 * Web Services consumed using Java
     * TBD
+* Web Services consuming an API
+    * TBD
 * CSS
     * Bootstrap or Materialize. Possibly another (TBD)
 * Data Validation
