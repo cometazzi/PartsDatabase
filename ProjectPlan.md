@@ -57,6 +57,9 @@
 - [ ] Deploy project to AWS
 - [ ] Add deployed link to indie project list in student repo
 
+### Week 8
+- [ ] all JSPs completed.
+
 ### Week 9 (Start of the team project)
 #### Checkpoint 3 is Due: Deployed to AWS, at least one JSP that displays data from the database is implemented, authentication implemented, add AWS deployed app link to indie project list in student repo.
 - [ ] Double-check all checkpoint 3 items (above) are complete and visible in github.
