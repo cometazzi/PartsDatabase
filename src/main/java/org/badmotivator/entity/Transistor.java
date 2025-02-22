@@ -21,6 +21,7 @@ public class Transistor {
      * The Package type.
      */
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "package_type", insertable = false, updatable = false)
     PackageTypes packageType;
 
     @Column(name = "image_url")
@@ -39,7 +40,7 @@ public class Transistor {
     private int qty;
 
     @Column(name = "package_type")
-    private String packageName;
+    private int packageName;
 
     @Column(name = "cost")
     private String cost;
@@ -56,7 +57,7 @@ public class Transistor {
                       String technology,
                       String descr,
                       int qty,
-                      String packageName,
+                      int packageName,
                       String cost,
                       String datasheetUrl) {
         this.packageType = packageType;
@@ -183,7 +184,7 @@ public class Transistor {
      *
      * @return the package name
      */
-    public String getPackageName() {
+    public int getPackageName() {
         return packageName;
     }
 
@@ -192,7 +193,7 @@ public class Transistor {
      *
      * @param packageName the package name
      */
-    public void setPackageName(String packageName) {
+    public void setPackageName(int packageName) {
         this.packageName = packageName;
     }
 

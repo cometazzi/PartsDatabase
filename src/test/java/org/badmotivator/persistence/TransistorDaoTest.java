@@ -64,7 +64,7 @@ class TransistorDaoTest {
         newTransistor.setTechnology("BJT");
         newTransistor.setDescr("NPN Transistor, Small Signal");
         newTransistor.setQty(58);
-        newTransistor.setPackageName("TO-92");
+        newTransistor.setPackageName(12);
         newTransistor.setCost("0.12");
         newTransistor.setDatasheetUrl("2N4401.pdf");
         int newTransistorID = transistorDao.insert(newTransistor);

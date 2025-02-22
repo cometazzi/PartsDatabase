@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `package_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `package_types` (
-                                 `id` int NOT NULL AUTO_INCREMENT,
-                                 `package_name` varchar(15) DEFAULT NULL,
-                                 `package_descr` varchar(75) DEFAULT NULL,
-                                 PRIMARY KEY (`id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `package_name` varchar(15) DEFAULT NULL,
+  `package_descr` varchar(75) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -48,10 +48,10 @@ DROP TABLE IF EXISTS `partsImages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `partsImages` (
-                               `id` int NOT NULL AUTO_INCREMENT,
-                               `largeImage` varchar(25) NOT NULL,
-                               `thumbImage` varchar(25) DEFAULT NULL,
-                               PRIMARY KEY (`id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `largeImage` varchar(25) NOT NULL,
+  `thumbImage` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,18 +73,18 @@ DROP TABLE IF EXISTS `transistors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `transistors` (
-                               `id` int NOT NULL AUTO_INCREMENT,
-                               `image_url` varchar(15) DEFAULT NULL,
-                               `part_num` varchar(15) DEFAULT NULL,
-                               `technology` varchar(15) DEFAULT NULL,
-                               `descr` varchar(75) DEFAULT NULL,
-                               `qty` int DEFAULT NULL,
-                               `package_type` int DEFAULT NULL,
-                               `cost` decimal(6,2) DEFAULT NULL,
-                               `datasheet_url` varchar(25) DEFAULT NULL,
-                               PRIMARY KEY (`id`),
-                               KEY `transistor_package_name_fk` (`package_type`),
-                               CONSTRAINT `transistor_package_name_fk` FOREIGN KEY (`package_type`) REFERENCES `package_types` (`id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `image_url` varchar(15) DEFAULT NULL,
+  `part_num` varchar(15) DEFAULT NULL,
+  `technology` varchar(15) DEFAULT NULL,
+  `descr` varchar(75) DEFAULT NULL,
+  `qty` int DEFAULT NULL,
+  `package_type` int DEFAULT NULL,
+  `cost` decimal(6,2) DEFAULT NULL,
+  `datasheet_url` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transistor_package_name_fk` (`package_type`),
+  CONSTRAINT `transistor_package_name_fk` FOREIGN KEY (`package_type`) REFERENCES `package_types` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -107,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-02-21 16:50:19
+-- Dump completed on 2025-02-22 13:19:30

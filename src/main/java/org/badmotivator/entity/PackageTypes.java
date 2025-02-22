@@ -21,7 +21,7 @@ public class PackageTypes {
     private int id;
 
     @OneToMany(mappedBy = "packageType", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transistor> transistors = new ArrayList<Transistor>();
+    private List<Transistor> transistors = new ArrayList<>();
 
     @Column(name = "package_name")
     private String packageName;
