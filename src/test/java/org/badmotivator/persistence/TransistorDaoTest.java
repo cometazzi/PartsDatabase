@@ -116,8 +116,8 @@ class TransistorDaoTest {
     void getByPropertyLike() {
         transistorDao = new TransistorDao();
         List<Transistor> foundTransistors = new ArrayList<>();
-        transistorDao.getByPropertyLike("packageName", "220");
-        assertEquals(4, foundTransistors.size());
+        foundTransistors = transistorDao.getByPropertyLike("descr", "PNP");
+        assertEquals(14, foundTransistors.size());
 
     }
 }

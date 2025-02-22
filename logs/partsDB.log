@@ -121,3 +121,17 @@
 [DEBUG] 2025-02-22 14:11:32.606 [main] TransistorDao - Searching for transistor with packageName = 2
 [INFO ] 2025-02-22 14:15:02.434 [main] Database - Database properties loaded
 [DEBUG] 2025-02-22 14:15:04.677 [main] TransistorDao - Searching for transistor with packageName = 
+[INFO ] 2025-02-22 14:32:24.248 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:32:26.529 [main] TransistorDao - Searching for transistor with technology = BJT
+[INFO ] 2025-02-22 14:34:25.450 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:34:27.831 [main] TransistorDao - Searching for transistor with descr = PNP
+[INFO ] 2025-02-22 14:34:53.243 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:34:55.511 [main] TransistorDao - Searching for transistor with descr = 
+[INFO ] 2025-02-22 14:35:54.099 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:35:56.355 [main] TransistorDao - Searching for transistor with technology = BJT
+[INFO ] 2025-02-22 14:36:20.678 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:36:23.029 [main] TransistorDao - Searching for transistor with packageName = 220
+[INFO ] 2025-02-22 14:37:08.131 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:37:10.496 [main] TransistorDao - Searching for transistor with descr = PNP
+[INFO ] 2025-02-22 14:37:23.986 [main] Database - Database properties loaded
+[DEBUG] 2025-02-22 14:37:26.216 [main] TransistorDao - Searching for transistor with descr = PNP
