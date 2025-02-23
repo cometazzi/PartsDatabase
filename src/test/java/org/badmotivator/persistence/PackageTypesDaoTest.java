@@ -3,6 +3,7 @@ package org.badmotivator.persistence;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.PackageTypes;
+import org.badmotivator.entity.Transistor;
 import org.badmotivator.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -58,11 +59,25 @@ class PackageTypesDaoTest {
 
     @Test
     void delete() {
+        // get a collection of transistor objects
+        TransistorDao transistorDao = new TransistorDao();
+        List<Transistor> transistorsToDelete = transistorDao.getByPropertyEqual("packageName", "13");
+
+
+        // delete package_type 13 (TO-126)
         PackageTypesDao packageTypesDao = new PackageTypesDao();
-        PackageTypes deletedPackageTypes = packageTypesDao.getById(7);
+        PackageTypes deletedPackageTypes = packageTypesDao.getById(13);
         packageTypesDao.delete(deletedPackageTypes);
-        PackageTypes retrievedPackageTypes = packageTypesDao.getById(7);
+
+        // verify the package_type is deleted:
+        PackageTypes retrievedPackageTypes = packageTypesDao.getById(13);
         assertNull(retrievedPackageTypes);
+
+        // now check if the transistors were deleted as well:
+        List<Transistor> retrievedTransistors = transistorDao.getByPropertyEqual("packageName", "13");
+
+        assertEquals(0, retrievedTransistors.size());
+
     }
 
     @Test
