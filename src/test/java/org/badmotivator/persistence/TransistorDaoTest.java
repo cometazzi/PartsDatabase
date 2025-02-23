@@ -41,7 +41,7 @@ class TransistorDaoTest {
     void getById() {
         transistorDao = new TransistorDao();
         Transistor retrievedTransistor = transistorDao.getById(1);
-        assertEquals("2N2222", retrievedTransistor.getPartNum());
+        assertTrue(retrievedTransistor.getPartNum().equals("2N2222"));
     }
 
     /**
@@ -104,10 +104,10 @@ class TransistorDaoTest {
 
         Transistor retrievedTransistor = transistorDao.getById(newTransistorID);
         assertNotNull(retrievedTransistor);
-        assertEquals("2N4403", retrievedTransistor.getPartNum());
-        assertEquals("BJT", retrievedTransistor.getTechnology());
-        assertEquals(72, retrievedTransistor.getQty());
-        assertEquals("TO-92", newTransistor.getPackageType().getPackageName());
+        assertTrue(retrievedTransistor.getPartNum().equals("2N4403"));
+        assertTrue(retrievedTransistor.getTechnology().equals("BJT"));
+        assertTrue(retrievedTransistor.getQty() == 72);
+        assertTrue(retrievedTransistor.getPackageType().getPackageName().equals("TO-92"));
     }
 
     /**
