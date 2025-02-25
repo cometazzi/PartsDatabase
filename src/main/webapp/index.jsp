@@ -4,7 +4,7 @@
 <html>
 <body>
 
-<h2>User Display Exercise</h2>
+<h2>Electronic Parts Search</h2>
 
 <form action="searchTransistors" class="form-inline">
     <div class="form-group">
@@ -13,7 +13,6 @@
     </div>
     <button type="submit" name="submit" value="search" class="btn btn-primary">Search Transistors</button>
     <button type="submit" name="submit" value="viewAll" class="btn btn-primary">View All Transistors</button>
-
 </form>
 </body>
 </html>

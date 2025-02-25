@@ -6,7 +6,7 @@
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
-        $('#userTable').DataTable();
+        $('#transistorTable').DataTable();
     } );
 </script>
 
@@ -17,24 +17,22 @@
     <h2>${title}: </h2>
     <table id="transistorTable" class="display" cellspacing="0" width="100%">
         <thead>
-        <th>Name</th>
-        <th>User Name</th>
-        <th>Age</th>
-        <th>Orders</th>
+        <th>Part Number</th>
+        <th>Technology</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Package Type</th>
+        <th>Cost</th>
         </thead>
         <tbody>
-        <c:forEach var="part" items="${users}">
+        <c:forEach var="part" items="${transistors}">
             <tr>
-                <td>${user.firstName} ${user.lastName}</td>
-                <td>${user.userName}</td>
-                <td>${user.age}</td>
-                <td>
-                    <ul>
-                        <c:forEach var="order" items="${user.orders}">
-                            <li>${order.description}</li>
-                        </c:forEach>
-                    </ul>
-                </td>
+                <td>${part.partNum}</td>
+                <td>${part.technology}</td>
+                <td>${part.descr}</td>
+                <td>${part.qty}</td>
+                <td>${part.packageName}</td>
+                <td>${part.cost}</td>
             </tr>
         </c:forEach>
         </tbody>

@@ -184,8 +184,9 @@ public class Transistor {
      *
      * @return the package name
      */
-    public int getPackageName() {
-        return packageName;
+    public String getPackageName() {
+        return packageType.getPackageName();
+
     }
 
     /**

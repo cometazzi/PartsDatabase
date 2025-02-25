@@ -24,14 +24,15 @@ public class SearchTransistors extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        TransistorDao userDao = new TransistorDao();
+        TransistorDao transistorDao = new TransistorDao();
 
         if (req.getParameter("submit").equals("search")) {
 
-            req.setAttribute( "users", userDao.getByPropertyEqual("lastName", req.getParameter("searchTerm")));
+            req.setAttribute( "transistors", transistorDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
         } else if (req.getParameter("submit").equals("viewAll")) {
-            req.setAttribute("users", userDao.getAll());
+            req.setAttribute("transistors", transistorDao.getAll());
         }
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorResults.jsp");
         dispatcher.forward(req, resp);
     }
