@@ -92,7 +92,7 @@
 
    </dependencies>
   <build>
-    <finalName>YourIndieProject</finalName>
+    <finalName>PartsDatabase</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
