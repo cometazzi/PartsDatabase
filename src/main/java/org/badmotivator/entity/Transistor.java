@@ -24,7 +24,7 @@ public class Transistor {
     @JoinColumn(name = "package_type", insertable = false, updatable = false)
     PackageTypes packageType;
 
-    @Column(name = "image_url")
+    @Column(name = "img_id")
     private String imageUrl;
 
     @Column(name = "part_num")
@@ -39,7 +39,7 @@ public class Transistor {
     @Column(name = "qty")
     private int qty;
 
-    @Column(name = "package_type")
+    @Column(name = "pkg_id")
     private int packageName;
 
     @Column(name = "cost")
