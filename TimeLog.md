@@ -20,3 +20,11 @@ Wed - 2 hours
 Thu - 5 hours
 Fri - 3 hours
 Sat - 3.5 hours
+
+### Week 6
+Tue - 4 hours
+Wed - 2 hours
+Sun - 3 hours
+
+### Week 7
+Wed - 4.5 hours

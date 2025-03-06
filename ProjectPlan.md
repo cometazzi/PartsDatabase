@@ -10,11 +10,11 @@
 ### Week 3
 - [ ] Research possible Web Services/APIs to use
 - [X] List technologies, versions and how they will be used
-- [ ] Write project plan
+- [X] Write project plan
 - [X] Document user stories and select MVP stories
-- [ ] Confirm MVP stories meet Ent Java indie project objectives
+- [X] Confirm MVP stories meet Ent Java indie project objectives
 - [X] Design screens - make sure all MVP user stories are covered
-- [ ] Triple-check for Checkpoint 1
+- [X] Triple-check for Checkpoint 1
 - [X] Update journal/time log/reflection - I should probably just use one :)
 
 ### Week 4 - Class topic is Hibernate
@@ -31,12 +31,12 @@
 - [ ] Update Weekly reflection
 
 ### Week 5
-- [ ] Create JSP for searching parts 
-- [ ] Create JSP for showing parts search results (Read user story)
+- [X] Create JSP for searching parts 
+- [X] Create JSP for showing parts search results (Read user story)
 - [ ] Create JSP for editing or deleting parts entries (Admin) (Update and Delete user stories)
 - [ ] Create JSP for adding parts entries (Admin) (Create user story)
 - [ ] Create controller to route to parts search jsp
-- [ ] Update weekly reflection
+- [X] Update weekly reflection
 
 ### Week 6
 - [ ] Create and populate Capacitors table, create entity, Dao and TestDao.
@@ -52,9 +52,9 @@
 
 - [ ] Double-check all checkpoint 2 items (above) are complete and visible in github.
 - [ ] Set up Authentication in indie project (more tasks coming for this)
-- [ ] Create project DB on AWS.
-- [ ] Update project config files for AWS as needed
-- [ ] Deploy project to AWS
+- [X] Create project DB on AWS.
+- [X] Update project config files for AWS as needed
+- [X] Deploy project to AWS
 - [ ] Add deployed link to indie project list in student repo
 
 ### Week 8
