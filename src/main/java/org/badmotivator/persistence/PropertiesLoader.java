@@ -11,16 +11,19 @@ import java.util.*;
  *
  */
 public interface PropertiesLoader{
+    Logger logger = LogManager.getLogger(PropertiesLoader.class);
 
     default Properties loadProperties(String propertiesFilePath) throws Exception {
         Properties properties = new Properties();
         try {
             properties.load(this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioException) {
-            ioException.printStackTrace();
+            //ioException.printStackTrace();
+            logger.error("Error reading properties file: " + ioException);
             throw ioException;
         } catch (Exception exception) {
-            exception.printStackTrace();
+            //exception.printStackTrace();
+            logger.error("Error reading properties file: " + exception);
             throw exception;
         }
         return properties;
