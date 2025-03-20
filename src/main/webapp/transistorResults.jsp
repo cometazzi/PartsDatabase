@@ -26,6 +26,7 @@
         </thead>
         <tbody>
         <c:forEach var="part" items="${transistors}">
+
             <tr>
                 <td>${part.partNum}</td>
                 <td>${part.technology}</td>
@@ -33,10 +34,12 @@
                 <td>${part.qty}</td>
                 <td>${part.packageName}</td>
                 <td>${part.cost}</td>
+                <td><a href="transistorDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">View Details</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
     <br>
-    <p>Click <a href="index.jsp">here</a> to return.</p>
+    <p>Click <a href="searchTransistor.jsp">here</a> to return.</p>
+
 </div>
