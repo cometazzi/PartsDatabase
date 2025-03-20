@@ -4,6 +4,12 @@
 <html>
 <body>
 
+<script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('#transistorTable').DataTable();
+    } );
+</script>
+
 <h2>${param.partNum} Details</h2>
 
 <table id="transistorTable" class="display" cellspacing="0" width="100%">
