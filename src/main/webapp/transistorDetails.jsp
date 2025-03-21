@@ -6,7 +6,7 @@
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
-        $('#transistorTable').DataTable();
+        $('#transistorTable').DataTable({searching: false});
     } );
 </script>
 

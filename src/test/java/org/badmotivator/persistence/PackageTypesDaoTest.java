@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.PackageTypes;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.util.Database;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -104,5 +106,11 @@ class PackageTypesDaoTest {
         retrievedPackages = packageTypesDao.getByPropertyLike("packageDescr", "Dual-Inline Package");
         assertNotNull(retrievedPackages);
         assertEquals(7, retrievedPackages.size());
+    }
+
+    @Test
+    void restoreDatabase() {
+        // not really a test, just a restore sequence.
+        setUp();
     }
 }

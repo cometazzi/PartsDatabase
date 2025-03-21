@@ -28,6 +28,7 @@
 
         <mapping class="org.badmotivator.entity.Transistor"/>
         <mapping class="org.badmotivator.entity.PackageTypes"/>
+        <mapping class="org.badmotivator.entity.PartsImages"/>
 
     </session-factory>
 

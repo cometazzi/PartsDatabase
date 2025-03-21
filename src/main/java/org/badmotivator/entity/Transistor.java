@@ -24,6 +24,10 @@ public class Transistor {
     @JoinColumn(name = "package_type", insertable = false, updatable = false)
     PackageTypes packageType;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "image_url", insertable = false, updatable = false)
+    PartsImages partsImages;
+
     @Column(name = "image_url")
     private String imageUrl;
 
@@ -95,7 +99,7 @@ public class Transistor {
      * @return the image url
      */
     public String getImageUrl() {
-        return imageUrl;
+        return partsImages.getThumbImageUrl();
     }
 
     /**
@@ -252,7 +256,7 @@ public class Transistor {
      */
 
     public void setPackageType(PackageTypes packageType) {
-       this.packageType = packageType;
+        this.packageType = packageType;
 
     }
 

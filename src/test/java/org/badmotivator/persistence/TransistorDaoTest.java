@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.PackageTypes;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.util.Database;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -152,4 +153,10 @@ class TransistorDaoTest {
         foundTransistors = transistorDao.getByPropertyLike("descr", "PNP");
         assertEquals(14, foundTransistors.size());
      }
+
+    @Test
+    void restoreDatabase() {
+        // not really a test, just a restore sequence.
+        init();
+    }
 }

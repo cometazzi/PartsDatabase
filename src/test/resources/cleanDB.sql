@@ -193,7 +193,7 @@ CREATE TABLE `partsImages` (
 
 LOCK TABLES `partsImages` WRITE;
 /*!40000 ALTER TABLE `partsImages` DISABLE KEYS */;
-INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4_large.jpg'),(2,'DIP-6','dip6_large.jpg'),(3,'DIP-8','dip8_large.jpg'),(4,'DIP-14','dip14_large.jpg'),(5,'DIP-16','dip16_large.jpg'),(6,'DIP-18','dip18_large.jpg'),(7,'Dip-28','dip28_large.jpg'),(8,'SIP-8','sip8_large.jpg'),(9,'TO-3','to3_large.jpg'),(10,'TO-5','to5_large.jpg'),(11,'TO-18','to18_large.jpg'),(12,'TO-92','to92_large.jpg'),(13,'TO-126','to126_large.jpg'),(14,'TO-220','to220_large.jpg');
+INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'Dip-28','dip28.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg');
 /*!40000 ALTER TABLE `partsImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-05 19:57:33
+-- Dump completed on 2025-03-21 13:43:29

@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
+<!-- %@page errorPage = "error.jsp" % -->
 <c:set var="title" value="Search Results" />
 <c:import url="head.jsp" />
 
@@ -17,6 +17,7 @@
     <h2>${title}: </h2>
     <table id="transistorTable" class="display" cellspacing="0" width="100%">
         <thead>
+        <th>Image</th>
         <th>Part Number</th>
         <th>Technology</th>
         <th>Description</th>
@@ -28,6 +29,7 @@
         <c:forEach var="part" items="${transistors}">
 
             <tr>
+                <td><img src="images/${part.imageUrl}"></td>
                 <td>${part.partNum}</td>
                 <td>${part.technology}</td>
                 <td>${part.descr}</td>
