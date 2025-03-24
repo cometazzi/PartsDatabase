@@ -156,7 +156,7 @@ class TransistorDaoTest {
 
     @Test
     void restoreDatabase() {
-        // not really a test, just a restore sequence.
+        // not really a test, just a quit restore sequence I can call whenever I need to.
         init();
     }
 }
