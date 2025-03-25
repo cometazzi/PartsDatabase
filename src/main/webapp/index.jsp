@@ -7,5 +7,8 @@
 <h2>Electronic Parts Search</h2>
 
 <a href="searchTransistor.jsp">Search Transistors</a>
+<br>
+<br>
+<a href="logIn">Log In</a>
 </body>
 </html>
