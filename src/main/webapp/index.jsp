@@ -4,11 +4,10 @@
 <html>
 <body>
 
-<h2>Electronic Parts Search</h2>
+<h2>Parts Database</h2>
 
+<p>Parts Database is free to use, but to make changes you must <a href="logIn">log in</a>.</p>
+<br>
 <a href="searchTransistor.jsp">Search Transistors</a>
-<br>
-<br>
-<a href="logIn">Log In</a>
 </body>
 </html>

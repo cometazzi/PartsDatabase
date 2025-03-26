@@ -18,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -88,12 +89,19 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 TokenResponse tokenResponse = getToken(authRequest);
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
+
+                // late nite fix
+                HttpSession session = req.getSession();
+                session.setAttribute("userName", userName);
+
+                logger.debug("userName is: " + userName);
+                logger.debug("session.getAttribute: " + session.getAttribute("userName"));
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                //TODO forward to an error page
+
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                //TODO forward to an error page
+
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");

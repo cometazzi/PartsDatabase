@@ -42,6 +42,7 @@
         </c:forEach>
         </tbody>
     </table>
+
     <br>
     <p>Click <a href="searchTransistor.jsp">here</a> to return.</p>
 
