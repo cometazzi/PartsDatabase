@@ -6,7 +6,16 @@
 
 <h2>Parts Database</h2>
 
-<p>Parts Database is free to use, but to make changes you must <a href="logIn">log in</a>.</p>
+<p>Parts Database is free to use, but to make changes you must <a href="logIn">register</a>.</p>
+<br>
+<c:choose>
+    <c:when test="${empty userName}">
+        <a href = "logIn">Log in</a>
+    </c:when>
+    <c:otherwise>
+        <h3>Welcome ${userName}</h3>
+    </c:otherwise>
+</c:choose>
 <br>
 <a href="searchTransistor.jsp">Search Transistors</a>
 </body>
