@@ -28,41 +28,41 @@
 - [X] Create a test version of the database for unit testing
 - [X] Create unit tests for the PackageTypes class
 - [X] Create a class for the DB connection business
-- [ ] Update Weekly reflection
+- [X] Update Weekly reflection
 
 ### Week 5
 - [X] Create JSP for searching parts 
 - [X] Create JSP for showing parts search results (Read user story)
 - [ ] Create JSP for editing or deleting parts entries (Admin) (Update and Delete user stories)
 - [ ] Create JSP for adding parts entries (Admin) (Create user story)
-- [ ] Create controller to route to parts search jsp
+- [X] Create controller to route to parts search jsp
 - [X] Update weekly reflection
 
 ### Week 6
-- [ ] Create and populate Capacitors table, create entity, Dao and TestDao.
-- [ ] Create and populate Chipamps table, create entity, Dao and TestDao
-- [ ] Create and populate Diodes table, create entity, Dao and TestDao
-- [ ] Create and populate LinearICs table, create entity, Dao and TestDao
-- [ ] Create and populate LogicICs table, create entity, Dao and TestDao
-- [ ] Create and populate Resistors table, create entity, Dao and TestDao
+- [X] Create and populate Capacitors table, create entity, Dao and TestDao.
+- [X] Create and populate Chipamps table, create entity, Dao and TestDao
+- [X] Create and populate Diodes table, create entity, Dao and TestDao
+- [X] Create and populate LinearICs table, create entity, Dao and TestDao
+- [X] Create and populate LogicICs table, create entity, Dao and TestDao
+- [X] Create and populate Resistors table, create entity, Dao and TestDao
 - [ ] Test all new items
 
 ### Week 7
 #### Checkpoint 2 is Due: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns)
 
-- [ ] Double-check all checkpoint 2 items (above) are complete and visible in github.
-- [ ] Set up Authentication in indie project (more tasks coming for this)
+- [X] Double-check all checkpoint 2 items (above) are complete and visible in github.
+- [X] Set up Authentication in indie project (more tasks coming for this)
 - [X] Create project DB on AWS.
 - [X] Update project config files for AWS as needed
 - [X] Deploy project to AWS
-- [ ] Add deployed link to indie project list in student repo
+- [X] Add deployed link to indie project list in student repo
 
 ### Week 8
 - [ ] all JSPs completed.
 
 ### Week 9 (Start of the team project)
 #### Checkpoint 3 is Due: Deployed to AWS, at least one JSP that displays data from the database is implemented, authentication implemented, add AWS deployed app link to indie project list in student repo.
-- [ ] Double-check all checkpoint 3 items (above) are complete and visible in github.
+- [X] Double-check all checkpoint 3 items (above) are complete and visible in github.
 
 ### Week 15
 - [ ] Implement Feedback from Week 14 review

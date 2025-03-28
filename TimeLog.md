@@ -28,3 +28,20 @@ Sun - 3 hours
 
 ### Week 7
 Wed - 4.5 hours
+Thur - 2 hours
+
+### Week 8
+Mon - 3 hours
+Tue - 2 hours
+Wed - 4 hours
+
+### Spring Break
+Wed - 5 hours
+Thur - 3 hours
+Sat - 3 hours
+
+### Week 9
+Mon - 6 hours
+Tue - 9 hours
+Wed - 5.5 hours
+Thur - 2.5 hours
