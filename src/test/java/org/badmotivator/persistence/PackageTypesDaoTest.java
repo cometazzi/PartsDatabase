@@ -27,7 +27,7 @@ class PackageTypesDaoTest {
 
     @Test
     void getById() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         PackageTypes retrievedPackageTypes = packageTypesDao.getById(7);
         assertNotNull(retrievedPackageTypes);
         assertEquals("DIP-28", retrievedPackageTypes.getPackageName());
@@ -35,7 +35,7 @@ class PackageTypesDaoTest {
 
     @Test
     void update() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         PackageTypes retrievedPackageTypes = packageTypesDao.getById(9);
         retrievedPackageTypes.setPackageDescr("Nobody uses these big ole things anymore!");
         packageTypesDao.update(retrievedPackageTypes);
@@ -46,11 +46,11 @@ class PackageTypesDaoTest {
 
     @Test
     void insert() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         PackageTypes insertedPackageTypes = new PackageTypes();
         insertedPackageTypes.setPackageName("TO-5");
         insertedPackageTypes.setPackageDescr("1960s-era 5mm Metal Can");
-        int newPackage = packageTypesDao.insert(insertedPackageTypes);
+        int newPackage = packageTypesDao.insert(insertedPackageTypes).getId();
 
         PackageTypes retrievedPackageTypes = packageTypesDao.getById(newPackage);
         assertNotNull(retrievedPackageTypes);
@@ -62,12 +62,12 @@ class PackageTypesDaoTest {
     @Test
     void delete() {
         // get a collection of transistor objects
-        TransistorDao transistorDao = new TransistorDao();
+        GenericDao<Transistor> transistorDao = new GenericDao<>(Transistor.class);
         List<Transistor> transistorsToDelete = transistorDao.getByPropertyEqual("packageName", "13");
 
 
         // delete package_type 13 (TO-126)
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         PackageTypes deletedPackageTypes = packageTypesDao.getById(13);
         packageTypesDao.delete(deletedPackageTypes);
 
@@ -84,7 +84,7 @@ class PackageTypesDaoTest {
 
     @Test
     void getAll() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         List<PackageTypes> retrievedPackageTypes = packageTypesDao.getAll();
         assertNotNull(retrievedPackageTypes);
         assertEquals(14, retrievedPackageTypes.size());
@@ -92,7 +92,7 @@ class PackageTypesDaoTest {
 
     @Test
     void getByPropertyEqual() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         List<PackageTypes> retrievedPackages = new ArrayList<>();
         retrievedPackages = packageTypesDao.getByPropertyEqual("packageDescr", "Dual-Inline Package, 4 Leads Per Side");
         assertNotNull(retrievedPackages);
@@ -101,7 +101,7 @@ class PackageTypesDaoTest {
 
     @Test
     void getByPropertyLike() {
-        PackageTypesDao packageTypesDao = new PackageTypesDao();
+        GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         List<PackageTypes> retrievedPackages = new ArrayList<>();
         retrievedPackages = packageTypesDao.getByPropertyLike("packageDescr", "Dual-Inline Package");
         assertNotNull(retrievedPackages);

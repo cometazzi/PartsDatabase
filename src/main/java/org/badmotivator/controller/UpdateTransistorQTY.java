@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.entity.User;
+import org.badmotivator.persistence.GenericDao;
 import org.badmotivator.persistence.TransistorDao;
 
 import javax.servlet.RequestDispatcher;
@@ -50,7 +51,7 @@ public class UpdateTransistorQTY extends HttpServlet {
         int qty = Integer.parseInt(req.getParameter("newQty"));
 
         // build daos and objects for manipulation.
-        TransistorDao transistorDao = new TransistorDao();
+        GenericDao<Transistor> transistorDao = new GenericDao<>(Transistor.class);
         List<Transistor> transistorList = transistorDao.getByPropertyEqual("partNum", selectedPartNum);
         Transistor transistor = transistorList.get(0);
 
