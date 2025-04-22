@@ -6,7 +6,7 @@
 <hibernate-configuration>
     <session-factory>
 
-
+<!--
         <property name="connection.url">jdbc:mysql://awseb-e-7web2agrsg-stack-awsebrdsdatabase-wb6ilcdscomi.cbuksiycik2p.us-west-2.rds.amazonaws.com:3306/parts_database</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
@@ -15,13 +15,13 @@
         <property name="connection.password">student8</property>
 
 
-        <!--
+        -->
         <property name="connection.url">jdbc:mysql://localhost:3306/parts_database</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 
         <property name="connection.username">phaeton</property>
         <property name="connection.password">student</property>
--->
+
 
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
