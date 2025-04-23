@@ -37,12 +37,12 @@ class CapacitorDaoTest {
         assertTrue(retrievedCapacitor.getPartNum().equals("56pf"));
     }
 
-    @Test
-    void setId() {
-    }
 
     @Test
     void getImageUrl() {
+        partDao = new GenericDao<>(Capacitor.class);
+        Capacitor retrievedCapacitor = partDao.getById(21);
+        assertTrue();
     }
 
     @Test

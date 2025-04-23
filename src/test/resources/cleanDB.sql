@@ -110,7 +110,7 @@ CREATE TABLE `diodes` (
 
 LOCK TABLES `diodes` WRITE;
 /*!40000 ALTER TABLE `diodes` DISABLE KEYS */;
-INSERT INTO `diodes` VALUES (1,19,'LED','Orange LED',37,19,0.06,NULL),(2,16,'LED','Red LED',139,16,0.03,NULL),(3,14,'LED','White LED',20,14,0.05,NULL),(4,15,'LED','Bicolor Green/Red LED',6,15,0.12,NULL),(5,16,'LED','Blinking Red LED',212,16,0.12,NULL),(6,14,'LED','Color Shift LED Fast',10,15,0.46,NULL),(7,14,'LED','Color Shift LED Slow',9,15,0.46,NULL),(8,17,'LED','Blue LED',47,17,0.06,NULL),(9,18,'LED','Yellow LED',154,18,0.03,NULL),(10,16,'LED','Low Power Red LED',22,16,0.15,NULL),(11,20,'1N34A','Germanium Diode',62,20,1.20,'datasheets/1N34.pdf'),(12,20,'1N60A','Germanium Diode',42,20,0.80,'datasheets/1N60.pdf'),(13,21,'1N4001','Rectifier Diode',57,21,0.02,'datasheets/1N4001.pdf'),(14,21,'1N4004','Rectifier Diode',77,21,0.02,'datasheets/1N4001.pdf'),(15,21,'1N4007','Rectifier Diode',94,21,0.02,'datasheets/1N4001.pdf'),(16,22,'1N4148','Small Signal Diode',167,22,0.02,'datasheets/1N4148.pdf'),(17,22,'1N914','Small Signal Diode',100,22,0.02,'datasheets/1N4148.pdf');
+INSERT INTO `diodes` VALUES (1,20,'ORANGELED','Orange LED',37,19,0.06,NULL),(2,17,'REDLED','Red LED',139,16,0.03,NULL),(3,15,'WHITELED','White LED',20,14,0.05,NULL),(4,16,'BICOLORLED','Bicolor Green/Red LED',6,15,0.12,NULL),(5,17,'BLINKLED','Blinking Red LED',212,16,0.12,NULL),(6,15,'COLORSHIFTFAST','Color Shift LED Fast',10,15,0.46,NULL),(7,15,'COLORSHIFTSLOW','Color Shift LED Slow',9,15,0.46,NULL),(8,18,'BLUELED','Blue LED',47,17,0.06,NULL),(9,19,'YELLOWLED','Yellow LED',154,18,0.03,NULL),(10,17,'LOWPOWERLED','Low Power Red LED',22,16,0.15,NULL),(11,21,'1N34A','Germanium Diode',62,20,1.20,'datasheets/1N34.pdf'),(12,21,'1N60A','Germanium Diode',42,20,0.80,'datasheets/1N60.pdf'),(13,22,'1N4001','Rectifier Diode',57,21,0.02,'datasheets/1N4001.pdf'),(14,22,'1N4004','Rectifier Diode',77,21,0.02,'datasheets/1N4001.pdf'),(15,22,'1N4007','Rectifier Diode',94,21,0.02,'datasheets/1N4001.pdf'),(16,27,'1N4148','Small Signal Diode',167,22,0.02,'datasheets/1N4148.pdf'),(17,27,'1N914','Small Signal Diode',100,22,0.02,'datasheets/1N4148.pdf');
 /*!40000 ALTER TABLE `diodes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `linear_ics` (
                               KEY `linear_ics_package_types_id_fk_2` (`package_type`),
                               CONSTRAINT `linear_ics_package_types_id_fk` FOREIGN KEY (`package_type`) REFERENCES `package_types` (`id`),
                               CONSTRAINT `linear_ics_package_types_id_fk_2` FOREIGN KEY (`package_type`) REFERENCES `package_types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `linear_ics` (
 
 LOCK TABLES `linear_ics` WRITE;
 /*!40000 ALTER TABLE `linear_ics` DISABLE KEYS */;
-INSERT INTO `linear_ics` VALUES (1,3,'LM311','Differential Comparator',4,3,0.23,'datasheets/LM311.pdf'),(2,4,'LM339','Quad Comparator',4,4,0.35,'datasheets/LM339.pdf'),(3,3,'LM555','Timer IC',27,3,0.19,'datasheets/LM555.pdf'),(4,4,'LM556','Dual Timer IC',8,4,0.34,'datasheets/LM556.pdf'),(5,14,'LM7805','5V Voltage Regulator',22,14,0.23,'datasheets/LM78XX.pdf'),(6,14,'LM7809','9V Voltage Regulator',39,14,0.33,'datasheets/LM78XX.pdf'),(7,14,'LM7812','12V Voltage Regulator',12,14,0.33,'datasheets/LM78XX.pdf'),(8,14,'LM7815','15V Voltage Regulator',21,14,0.28,'datasheets/LM78XX.pdf'),(9,14,'LM7824','24V Voltage Regulator',18,14,0.35,'datasheets/LM78XX.pdf');
+INSERT INTO `linear_ics` VALUES (1,3,'LM311','Differential Comparator',4,3,0.23,'datasheets/LM311.pdf'),(2,4,'LM339','Quad Comparator',4,4,0.35,'datasheets/LM339.pdf'),(3,3,'LM555','Timer IC',27,3,0.19,'datasheets/LM555.pdf'),(4,4,'LM556','Dual Timer IC',8,4,0.34,'datasheets/LM556.pdf'),(5,14,'LM7805','5V Voltage Regulator',22,14,0.23,'datasheets/LM78XX.pdf'),(6,14,'LM7809','9V Voltage Regulator',39,14,0.33,'datasheets/LM78XX.pdf'),(7,14,'LM7812','12V Voltage Regulator',12,14,0.33,'datasheets/LM78XX.pdf'),(8,14,'LM7815','15V Voltage Regulator',21,14,0.28,'datasheets/LM78XX.pdf'),(9,14,'LM7824','24V Voltage Regulator',18,14,0.35,'datasheets/LM78XX.pdf'),(10,3,'TLO72','Dual OpAmp',22,1,0.25,'datasheets/TL07x.pdf'),(11,4,'TLO74','Quad OpAmp',42,4,0.30,'datasheets/TL07x.pdf'),(12,3,'JRC4558D','Dual OpAmp',8,1,0.30,'datasheets/JRC4558.pdf'),(13,3,'LM741','Single OpAmp',27,1,0.22,'datasheets/LM741.pdf');
 /*!40000 ALTER TABLE `linear_ics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `package_types` (
                                  `package_name` varchar(15) DEFAULT NULL,
                                  `package_descr` varchar(75) DEFAULT NULL,
                                  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `package_types` (
 
 LOCK TABLES `package_types` WRITE;
 /*!40000 ALTER TABLE `package_types` DISABLE KEYS */;
-INSERT INTO `package_types` VALUES (1,'DIP-4','Dual-Inline Package, 2 Leads Per Side'),(2,'DIP-6','Dual-Inline Package, 3 Leads Per Side'),(3,'DIP-8','Dual-Inline Package, 4 Leads Per Side'),(4,'DIP-14','Dual-Inline Package, 7 Leads Per Side'),(5,'DIP-16','Dual-Inline Package, 8 Leads Per Side'),(6,'DIP-18','Dual-Inline Package, 9 Leads Per Side'),(7,'DIP-28','Dual-Inline Package, 14 Leads Per Side'),(8,'SIP-8','Single-Inline Package, 8 Leads In A Row'),(9,'TO-3','Large Metal Package, Chassis-Mount'),(10,'TO-5','Small Metal Package, 8.9mm Diameter'),(11,'TO-18','Small Metal Package, 4.7mm Diameter'),(12,'TO-92','Small Molded Plastic Package, 5mm Width'),(13,'TO-126','Square Flat Composite Package 8mm Width'),(14,'TO-220','Large Square Composite Package with Heatsink Mount');
+INSERT INTO `package_types` VALUES (1,'DIP-4','Dual-Inline Package, 2 Leads Per Side'),(2,'DIP-6','Dual-Inline Package, 3 Leads Per Side'),(3,'DIP-8','Dual-Inline Package, 4 Leads Per Side'),(4,'DIP-14','Dual-Inline Package, 7 Leads Per Side'),(5,'DIP-16','Dual-Inline Package, 8 Leads Per Side'),(6,'DIP-18','Dual-Inline Package, 9 Leads Per Side'),(7,'DIP-28','Dual-Inline Package, 14 Leads Per Side'),(8,'SIP-8','Single-Inline Package, 8 Leads In A Row'),(9,'TO-3','Large Metal Package, Chassis-Mount'),(10,'TO-5','Small Metal Package, 8.9mm Diameter'),(11,'TO-18','Small Metal Package, 4.7mm Diameter'),(12,'TO-92','Small Molded Plastic Package, 5mm Width'),(13,'TO-126','Square Flat Composite Package 8mm Width'),(14,'TO-220','Large Square Composite Package with Heatsink Mount'),(15,'WHITELED','White LED'),(16,'BICOLORLED','Bi-Color LED'),(17,'REDLED','Red LED'),(18,'BLUELED','Blue LED'),(19,'YELLOWLED','Yellow LED'),(20,'ORANGELED','Orange LED'),(21,'DO-3','NOS Germanium Diode'),(22,'DO-5','Silicon Rectifier Diode'),(23,'R-1','Radial Metal Film Resistor'),(24,'C-1','Ceramic Disc Capacitor'),(25,'C-2','Mylar Polyfilm Capacitor'),(26,'C-3','Aluminum Body Electrolytic Capacitor'),(27,'DO-4','Glass-bodied Silicon Diode');
 /*!40000 ALTER TABLE `package_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +184,7 @@ CREATE TABLE `partsImages` (
                                `largeImage` varchar(25) NOT NULL,
                                `thumbImage` varchar(25) DEFAULT NULL,
                                PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +193,7 @@ CREATE TABLE `partsImages` (
 
 LOCK TABLES `partsImages` WRITE;
 /*!40000 ALTER TABLE `partsImages` DISABLE KEYS */;
-INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'Dip-28','dip28.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg');
+INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'Dip-28','dip28.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg'),(15,'whiteLED','whiteLED.jpg'),(16,'bicolorLED','bicolorLED.jpg'),(17,'redLED','redLED.jpg'),(18,'blueLED','blueLED.jpg'),(19,'yellowLED','yellowLED.jpg'),(20,'orangeLED','orangeLED.jpg'),(21,'DO-3','germanium.jpg'),(22,'DO-5','rectifier.jpg'),(23,'R-1','resistor.jpg'),(24,'C-1','ceramicCap.jpg'),(25,'C-2','mylarCap.jpg'),(26,'C-3','electroCap.jpg'),(27,'DO-4','glassDiode.jpg');
 /*!40000 ALTER TABLE `partsImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-21 13:43:29
+-- Dump completed on 2025-04-23 17:34:55
