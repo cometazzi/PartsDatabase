@@ -42,11 +42,17 @@ class CapacitorDaoTest {
     void getImageUrl() {
         partDao = new GenericDao<>(Capacitor.class);
         Capacitor retrievedCapacitor = partDao.getById(21);
-        assertTrue();
+        assertTrue(retrievedCapacitor.getImageUrl().equals("ceramicCap.jpg"));
     }
 
     @Test
     void setImageUrl() {
+        partDao = new GenericDao<>(Capacitor.class);
+        Capacitor retrievedCapacitor = partDao.getById(21);
+        retrievedCapacitor.setImageUrl("19");
+        partDao.update(retrievedCapacitor);
+        Capacitor updatedCapacitor = partDao.getById(21);
+        assertTrue(updatedCapacitor.getImageUrl().equals("yellowLED.jpg"));
     }
 
     @Test
