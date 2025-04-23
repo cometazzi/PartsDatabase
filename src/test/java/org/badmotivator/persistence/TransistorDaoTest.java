@@ -25,7 +25,6 @@ class TransistorDaoTest {
      * The Generic dao.
      */
 
-
     // Use GenericDao
     GenericDao<Transistor> transistorDao;
 
