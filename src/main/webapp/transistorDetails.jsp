@@ -1,6 +1,6 @@
 <%@include file="taglib.jsp" %>
 <c:import url="head.jsp" />
-<!-- %@page errorPage = "error.jsp" % -->
+<%@page errorPage = "error.jsp" %>
 <html>
 <body>
 

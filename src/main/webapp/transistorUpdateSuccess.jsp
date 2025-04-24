@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp" %>
-<!--%@page errorPage = "error.jsp" % -->
+<%@page errorPage = "error.jsp" %>
 <c:set var="title" value="Update Success" />
 <c:import url="head.jsp" />
 

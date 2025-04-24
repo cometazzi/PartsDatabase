@@ -17,7 +17,8 @@
     </c:otherwise>
 </c:choose>
 <br>
-<a href="capacitorSearch.jsp">Search Capacitors</a>
-<a href="transistorSearch.jsp">Search Transistors</a>
+<a href="capacitorSearch.jsp">Search Capacitors</a><br>
+<a href="transistorSearch.jsp">Search Transistors</a><br>
+<a href="chipAmpSearch.jsp">Search ChipAmps</a><br>
 </body>
 </html>

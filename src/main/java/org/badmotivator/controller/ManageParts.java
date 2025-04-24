@@ -3,6 +3,7 @@ package org.badmotivator.controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.Capacitor;
+import org.badmotivator.entity.ChipAmp;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.persistence.GenericDao;
 
@@ -100,6 +101,29 @@ public class ManageParts extends HttpServlet {
             dispatcher.forward(req, resp);
         } // end capacitor
 
+        if (partType.equals("chipAmp")) {
+
+            /// map variables from the form.
+            String selectedPartNum = req.getParameter("partNum");
+            int qty = Integer.parseInt(req.getParameter("newQty"));
+
+            // build daos and objects for manipulation.
+            GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
+            List<ChipAmp> chipAmpList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+            ChipAmp chipAmp = chipAmpList.get(0);
+
+            // update object, then write to db
+            chipAmp.setQty(qty);
+            partDao.update(chipAmp);
+
+
+            req.setAttribute( "updatedChipAmp", partDao.getByPropertyEqual("partNum", selectedPartNum));
+
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
+            dispatcher.forward(req, resp);
+        } // end chipAmp
 
     }
 }

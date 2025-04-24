@@ -3,6 +3,7 @@ package org.badmotivator.controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.Capacitor;
+import org.badmotivator.entity.ChipAmp;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.persistence.GenericDao;
 
@@ -77,6 +78,25 @@ public class SearchParts extends HttpServlet {
             dispatcher.forward(req, resp);
         } // end capacitor
 
+        if (partType.equals("chipAmp")) {
+
+            // Create dao
+            GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
+
+            // one or all
+            if (req.getParameter("submit").equals("search")) {  // retrieve one
+                // set values
+                req.setAttribute("chipAmps", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
+
+            } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
+                // set values
+                req.setAttribute("chipAmps", partDao.getAll());
+            }
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpResults.jsp");
+            dispatcher.forward(req, resp);
+        } // end chipAmp
 
     }
 }

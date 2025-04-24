@@ -76,7 +76,7 @@ CREATE TABLE `chip_amps` (
 
 LOCK TABLES `chip_amps` WRITE;
 /*!40000 ALTER TABLE `chip_amps` DISABLE KEYS */;
-INSERT INTO `chip_amps` VALUES (1,14,'LM1875T','BJT','20W Audio Amplifier',2,14,2.99,'datasheets/LM1875.pdf'),(2,4,'LM380','BJT','2.5W Audio Amplifier',2,4,1.95,'datasheets/LM380.pdf'),(3,14,'LM383','BJT','7W Audio Amplifier',2,14,5.95,'datasheets/LM383.pdf'),(4,3,'LM386','BJT','500mW Audio Amplifier',14,3,0.95,'datasheets/LM386.pdf'),(5,4,'LM384','BJT','5W Audio Amplifier',2,4,1.95,'datasheets/LM384.pdf'),(6,3,'MC34119P','BJT','400mW Audio Amplifier',20,3,0.60,'datasheets/MC34119.pdf'),(7,7,'NJM2073','BJT','1-2W BTL Amplifier',20,7,0.48,'datasheets/NJM2073.pdf'),(8,3,'TBA820M','BJT','1.2W Audi Amplifier',10,3,1.20,'datasheets/TBA820.pdf'),(9,6,'TDA1517P','BJT','6W Stereo Audio Amplifier',10,6,0.90,'datasheets/TDA1517.pdf'),(10,14,'TDA2002','BJT','8W Audio Amplifier',2,14,2.95,'datasheets/TDA2002.pdf'),(11,14,'TDA2005','BJT','20W Audio Amplifier',1,14,1.20,'datasheets/TDA2005.pdf'),(12,3,'TDA2822M','BJT','1W Stereo Audio Amplifier',20,3,1.58,'datasheets/TDA2822.pdf'),(13,3,'TDA7052','BJT','1W Audio Amplifier',10,3,1.60,'datasheets/TDA7052.pdf'),(14,5,'TEA2025L','BJT','4.7W Audio Amplifier',2,5,0.36,'datasheets/TEA2025.pdf'),(15,6,'TPA3125','Class-D','10W Class-D Audio Amplifier',2,6,4.88,'datasheets/TPA3125.pdf');
+INSERT INTO `chip_amps` VALUES (1,14,'LM1875T','BJT','20W Audio Amplifier',2,14,2.99,'datasheets/LM1875.pdf'),(2,4,'LM380','BJT','2.5W Audio Amplifier',2,4,1.95,'datasheets/LM380.pdf'),(3,14,'LM383','BJT','7W Audio Amplifier',2,14,5.95,'datasheets/LM383.pdf'),(4,3,'LM386','BJT','500mW Audio Amplifier',14,3,0.95,'datasheets/LM386.pdf'),(5,4,'LM384','BJT','5W Audio Amplifier',2,4,1.95,'datasheets/LM384.pdf'),(6,3,'MC34119P','BJT','400mW Audio Amplifier',20,3,0.60,'datasheets/MC34119.pdf'),(7,8,'NJM2073','BJT','1-2W BTL Amplifier',20,7,0.48,'datasheets/NJM2073.pdf'),(8,3,'TBA820M','BJT','1.2W Audi Amplifier',10,3,1.20,'datasheets/TBA820.pdf'),(9,6,'TDA1517P','BJT','6W Stereo Audio Amplifier',10,6,0.90,'datasheets/TDA1517.pdf'),(10,14,'TDA2002','BJT','8W Audio Amplifier',2,14,2.95,'datasheets/TDA2002.pdf'),(11,14,'TDA2005','BJT','20W Audio Amplifier',1,14,1.20,'datasheets/TDA2005.pdf'),(12,3,'TDA2822M','BJT','1W Stereo Audio Amplifier',20,3,1.58,'datasheets/TDA2822.pdf'),(13,3,'TDA7052','BJT','1W Audio Amplifier',10,3,1.60,'datasheets/TDA7052.pdf'),(14,5,'TEA2025L','BJT','4.7W Audio Amplifier',2,5,0.36,'datasheets/TEA2025.pdf'),(15,7,'TPA3125','Class-D','10W Class-D Audio Amplifier',2,6,4.88,'datasheets/TPA3125.pdf');
 /*!40000 ALTER TABLE `chip_amps` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,7 @@ CREATE TABLE `partsImages` (
 
 LOCK TABLES `partsImages` WRITE;
 /*!40000 ALTER TABLE `partsImages` DISABLE KEYS */;
-INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'Dip-28','dip28.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg'),(15,'whiteLED','whiteLED.jpg'),(16,'bicolorLED','bicolorLED.jpg'),(17,'redLED','redLED.jpg'),(18,'blueLED','blueLED.jpg'),(19,'yellowLED','yellowLED.jpg'),(20,'orangeLED','orangeLED.jpg'),(21,'DO-3','germanium.jpg'),(22,'DO-5','rectifier.jpg'),(23,'R-1','resistor.jpg'),(24,'C-1','ceramicCap.jpg'),(25,'C-2','mylarCap.jpg'),(26,'C-3','electroCap.jpg'),(27,'DO-4','glassDiode.jpg');
+INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'DIP-20','dip20.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg'),(15,'whiteLED','whiteLED.jpg'),(16,'bicolorLED','bicolorLED.jpg'),(17,'redLED','redLED.jpg'),(18,'blueLED','blueLED.jpg'),(19,'yellowLED','yellowLED.jpg'),(20,'orangeLED','orangeLED.jpg'),(21,'DO-3','germanium.jpg'),(22,'DO-5','rectifier.jpg'),(23,'R-1','resistor.jpg'),(24,'C-1','ceramicCap.jpg'),(25,'C-2','mylarCap.jpg'),(26,'C-3','electroCap.jpg'),(27,'DO-4','glassDiode.jpg');
 /*!40000 ALTER TABLE `partsImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-23 17:34:55
+-- Dump completed on 2025-04-24 17:03:42
