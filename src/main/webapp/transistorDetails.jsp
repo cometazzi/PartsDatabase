@@ -46,7 +46,7 @@
     <button type="submit" name="submit" value="changeQty"  class="btn btn-primary">Update Quantity</button>
 </form>
 
-<a href="searchTransistor.jsp">Return to Search Transistors</a><br>
+<a href="transistorSearch.jsp">Return to Search Transistors</a><br>
 <a href="index.jsp">Return to Index</a><br>
 
 </body>
