@@ -36,7 +36,7 @@
 </table>
 
 
-<form action="UpdateTransistorQTY" class="form-inline">
+<form action="ManageParts" class="form-inline">
     <div class="form-group">
         <label for="newQty">Change Quantity</label>
         <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty" value="${param.partQty}">

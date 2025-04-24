@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,12 +24,24 @@ import java.util.List;
  */
 
 @WebServlet(
-        urlPatterns = {"/manageParts"}
+        urlPatterns = {"/ManageParts"}
 )
 
 public class ManageParts extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // First get user from the session.
+        HttpSession session = req.getSession();
+        String sessionUser = (String) session.getAttribute("userName");
+
+        // If no user is logged in, send them to logIn Servlet.
+        if (sessionUser == null) {
+
+
+            resp.sendRedirect("logIn");
+            return;
+        }
 
         Logger logger = LogManager.getLogger(ManageParts.class);
         // first get part type from the form data
@@ -57,7 +70,7 @@ public class ManageParts extends HttpServlet {
             req.setAttribute( "updatedTransistor", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/updateTransistorSuccess.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
             dispatcher.forward(req, resp);
             
         } // end transistor
@@ -83,7 +96,7 @@ public class ManageParts extends HttpServlet {
 
 
             // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorResults.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
             dispatcher.forward(req, resp);
         } // end capacitor
 

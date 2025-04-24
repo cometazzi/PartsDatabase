@@ -34,7 +34,7 @@
 </table>
 
 
-<form action="UpdateCapacitorQTY" class="form-inline">
+<form action="ManageParts" class="form-inline">
     <div class="form-group">
         <label for="newQty">Change Quantity</label>
         <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty" value="${param.partQty}">
@@ -44,7 +44,7 @@
     <button type="submit" name="submit" value="changeQty"  class="btn btn-primary">Update Quantity</button>
 </form>
 
-<a href="searchCapacitor.jsp">Return to Search Capacitors</a><br>
+<a href="capacitorSearch.jsp">Return to Search Capacitors</a><br>
 <a href="index.jsp">Return to Index</a><br>
 
 </body>

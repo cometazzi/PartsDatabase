@@ -63,7 +63,7 @@ public class UpdateTransistorQTY extends HttpServlet {
             req.setAttribute( "updatedTransistor", transistorDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/updateTransistorSuccess.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
         dispatcher.forward(req, resp);
     }
 }
