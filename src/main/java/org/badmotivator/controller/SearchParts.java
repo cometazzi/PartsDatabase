@@ -79,20 +79,4 @@ public class SearchParts extends HttpServlet {
 
 
     }
-
-/*
-
-            if (req.getParameter("submit").equals("search")) {
-
-                req.setAttribute("transistors", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
-            } else if (req.getParameter("submit").equals("viewAll")) {
-                req.setAttribute("transistors", transistorDao.getAll());
-            }
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorResults.jsp");
-            dispatcher.forward(req, resp);
-
- */
-
-
 }
