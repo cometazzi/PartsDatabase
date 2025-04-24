@@ -2,6 +2,7 @@ package org.badmotivator.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.badmotivator.entity.Capacitor;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.persistence.GenericDao;
 
@@ -34,6 +35,7 @@ public class SearchParts extends HttpServlet {
 
         // test
         logger.debug("hitting SearchParts");
+        logger.debug("part type is: " + partType);
 
         if (partType.equals("transistor")) {
 
@@ -58,7 +60,7 @@ public class SearchParts extends HttpServlet {
         if (partType.equals("capacitor")) {
 
             // Create dao
-            GenericDao<Transistor> partDao = new GenericDao<>(Transistor.class);
+            GenericDao<Capacitor> partDao = new GenericDao<>(Capacitor.class);
 
             // one or all
             if (req.getParameter("submit").equals("search")) {  // retrieve one
@@ -72,6 +74,7 @@ public class SearchParts extends HttpServlet {
 
             // forward to appropriate results page
             RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorResults.jsp");
+            dispatcher.forward(req, resp);
         } // end capacitor
 
 

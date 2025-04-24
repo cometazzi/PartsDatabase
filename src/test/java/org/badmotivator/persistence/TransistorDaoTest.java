@@ -26,7 +26,7 @@ class TransistorDaoTest {
      */
 
     // Use GenericDao
-    GenericDao<Transistor> transistorDao;
+    GenericDao<Transistor> partDao;
 
     /**
      * Init- runs before each test to reset the database.
@@ -42,8 +42,8 @@ class TransistorDaoTest {
      */
     @Test
     void getById() {
-        transistorDao = new GenericDao<>(Transistor.class);
-        Transistor retrievedTransistor = transistorDao.getById(1);
+        partDao = new GenericDao<>(Transistor.class);
+        Transistor retrievedTransistor = partDao.getById(1);
         assertTrue(retrievedTransistor.getPartNum().equals("2N2222"));
     }
 
@@ -52,11 +52,11 @@ class TransistorDaoTest {
      */
     @Test
     void update() {
-        transistorDao = new GenericDao<>(Transistor.class);
-        Transistor retrievedTransistor = transistorDao.getById(40);
+        partDao = new GenericDao<>(Transistor.class);
+        Transistor retrievedTransistor = partDao.getById(40);
         retrievedTransistor.setQty(70); // original qty is 72
         retrievedTransistor.setDescr("Jumpin' JFETS!");  // original descr is "N-Channel JFET"
-        transistorDao.update(retrievedTransistor);
+        partDao.update(retrievedTransistor);
         assertEquals(70, retrievedTransistor.getQty());
         assertEquals("Jumpin' JFETS!", retrievedTransistor.getDescr());
     }
@@ -66,7 +66,7 @@ class TransistorDaoTest {
      */
     @Test
     void insert() {
-        transistorDao = new GenericDao<>(Transistor.class);
+        partDao = new GenericDao<>(Transistor.class);
         Transistor newTransistor = new Transistor(
                 null,
                 "TO-92.jpg",
@@ -78,12 +78,12 @@ class TransistorDaoTest {
                 "0.12",
                 "2N4401.pdf");
 
-        Transistor insertedTransistor = transistorDao.insert(newTransistor);
+        Transistor insertedTransistor = partDao.insert(newTransistor);
         int newTransistorID = insertedTransistor.getId();
 
-        assertEquals("2N4401", transistorDao.getById(newTransistorID).getPartNum());
-        assertEquals("BJT", transistorDao.getById(newTransistorID).getTechnology());
-        assertEquals(58, transistorDao.getById(newTransistorID).getQty());
+        assertEquals("2N4401", partDao.getById(newTransistorID).getPartNum());
+        assertEquals("BJT", partDao.getById(newTransistorID).getTechnology());
+        assertEquals(58, partDao.getById(newTransistorID).getQty());
 
     }
 
@@ -92,7 +92,7 @@ class TransistorDaoTest {
         PackageTypesDao packageTypesDao = new PackageTypesDao();
         PackageTypes packageTypes = packageTypesDao.getById(12);
 
-        transistorDao = new GenericDao<>(Transistor.class);
+        partDao = new GenericDao<>(Transistor.class);
         Transistor newTransistor = new Transistor(
                 packageTypes,
                 "TO-29.jpg",
@@ -104,9 +104,9 @@ class TransistorDaoTest {
                 "0.12",
                 "2n4403.pdf");
 
-        int newTransistorID = transistorDao.insert(newTransistor).getId();
+        int newTransistorID = partDao.insert(newTransistor).getId();
 
-        Transistor retrievedTransistor = transistorDao.getById(newTransistorID);
+        Transistor retrievedTransistor = partDao.getById(newTransistorID);
         assertNotNull(retrievedTransistor);
         assertTrue(retrievedTransistor.getPartNum().equals("2N4403"));
         assertTrue(retrievedTransistor.getTechnology().equals("BJT"));
@@ -119,10 +119,10 @@ class TransistorDaoTest {
      */
     @Test
     void delete() {
-        transistorDao = new GenericDao<>(Transistor.class);
-        Transistor transistorToDelete = transistorDao.getById(41);  // MPSA13 Darlington Transistor
-        transistorDao.delete(transistorToDelete);
-        assertNull(transistorDao.getById(41));
+        partDao = new GenericDao<>(Transistor.class);
+        Transistor transistorToDelete = partDao.getById(41);  // MPSA13 Darlington Transistor
+        partDao.delete(transistorToDelete);
+        assertNull(partDao.getById(41));
 
     }
 
@@ -131,8 +131,8 @@ class TransistorDaoTest {
      */
     @Test
     void getAll() {
-        transistorDao = new GenericDao<>(Transistor.class);
-        List<Transistor> retrievedTransistors = transistorDao.getAll();
+        partDao = new GenericDao<>(Transistor.class);
+        List<Transistor> retrievedTransistors = partDao.getAll();
         assertEquals(49, retrievedTransistors.size());
     }
 
@@ -141,8 +141,8 @@ class TransistorDaoTest {
      */
     @Test
     void getByPropertyEqual() {
-        transistorDao = new GenericDao<>(Transistor.class);
-        List<Transistor> foundTransistors = transistorDao.getByPropertyEqual("technology", "JFET");
+        partDao = new GenericDao<>(Transistor.class);
+        List<Transistor> foundTransistors = partDao.getByPropertyEqual("technology", "JFET");
         assertEquals(4, foundTransistors.size());
     }
 
@@ -151,9 +151,9 @@ class TransistorDaoTest {
      */
     @Test
     void getByPropertyLike() {
-        transistorDao = new GenericDao<>(Transistor.class);
+        partDao = new GenericDao<>(Transistor.class);
         List<Transistor> foundTransistors = new ArrayList<>();
-        foundTransistors = transistorDao.getByPropertyLike("descr", "PNP");
+        foundTransistors = partDao.getByPropertyLike("descr", "PNP");
         assertEquals(14, foundTransistors.size());
     }
 

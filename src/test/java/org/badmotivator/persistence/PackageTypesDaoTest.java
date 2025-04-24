@@ -87,7 +87,7 @@ class PackageTypesDaoTest {
         GenericDao<PackageTypes> packageTypesDao = new GenericDao<>(PackageTypes.class);
         List<PackageTypes> retrievedPackageTypes = packageTypesDao.getAll();
         assertNotNull(retrievedPackageTypes);
-        assertEquals(14, retrievedPackageTypes.size());
+        assertEquals(27, retrievedPackageTypes.size());
     }
 
     @Test

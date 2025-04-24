@@ -28,11 +28,11 @@ public class Capacitor {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @Column(name = "value")
-    private String partNum;
-
     @Column(name = "descr")
     private String descr;
+
+    @Column(name = "value")
+    private String partNum;
 
     @Column(name = "qty")
     private int qty;
@@ -43,11 +43,11 @@ public class Capacitor {
     public Capacitor() {
     }
 
-    public Capacitor(PackageTypes packageType,
-                      String imageUrl,
-                      String partNum,
-                      int qty,
-                      String cost) {
+    public Capacitor(String imageUrl,
+                     String descr,
+                     String partNum,
+                     int qty,
+                     String cost) {
         this.imageUrl = imageUrl;
         this.partNum = partNum;
         this.descr = descr;
