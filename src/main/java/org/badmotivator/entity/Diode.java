@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * A Class to represent a discrete Transistor
+ * A Class to represent a discrete Diode
  *
  * @author jdoderer
  */
-@Entity(name = "Transistor")
-@Table(name = "transistors")
-public class Transistor {
+@Entity(name = "Diode")
+@Table(name = "diodes")
+public class Diode {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -34,9 +34,6 @@ public class Transistor {
     @Column(name = "part_num")
     private String partNum;
 
-    @Column(name = "technology")
-    private String technology;
-
     @Column(name = "descr")
     private String descr;
 
@@ -52,13 +49,12 @@ public class Transistor {
     @Column(name = "datasheet_url")
     private String datasheetUrl;
 
-    public Transistor() {
+    public Diode() {
     }
 
-    public Transistor(PackageTypes packageType,
+    public Diode(PackageTypes packageType,
                       String imageUrl,
                       String partNum,
-                      String technology,
                       String descr,
                       int qty,
                       int packageName,
@@ -67,7 +63,6 @@ public class Transistor {
         this.packageType = packageType;
         this.imageUrl = imageUrl;
         this.partNum = partNum;
-        this.technology = technology;
         this.descr = descr;
         this.qty = qty;
         this.packageName = packageName;
@@ -127,24 +122,6 @@ public class Transistor {
      */
     public void setPartNum(String partNum) {
         this.partNum = partNum;
-    }
-
-    /**
-     * Gets technology.
-     *
-     * @return the technology
-     */
-    public String getTechnology() {
-        return technology;
-    }
-
-    /**
-     * Sets technology.
-     *
-     * @param technology the technology
-     */
-    public void setTechnology(String technology) {
-        this.technology = technology;
     }
 
     /**
@@ -263,11 +240,10 @@ public class Transistor {
 
     @Override
     public String toString() {
-        return "Transistor{" +
+        return "Diode{" +
                 "id=" + id +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", partNum='" + partNum + '\'' +
-                ", technology='" + technology + '\'' +
                 ", descr='" + descr + '\'' +
                 ", qty=" + qty +
                 ", packageName='" + packageName + '\'' +

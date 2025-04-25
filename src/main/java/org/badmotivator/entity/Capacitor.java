@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**
  * A Class to represent a Capacitor
  *
- * @autho jdoderer
+ * @author jdoderer
  */
 @Entity(name = "Capacitor")
 @Table(name = "capacitors")

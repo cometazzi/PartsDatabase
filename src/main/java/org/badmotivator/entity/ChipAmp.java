@@ -6,7 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**
  * A Class to represent a discrete ChipAmp
  *
- * @autho jdoderer
+ * @author jdoderer
  */
 @Entity(name = "ChipAmp")
 @Table(name = "chip_amps")

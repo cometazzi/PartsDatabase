@@ -24,6 +24,9 @@
         <mapping class="org.badmotivator.entity.PartsImages"/>
         <mapping class="org.badmotivator.entity.Capacitor"/>
         <mapping class="org.badmotivator.entity.ChipAmp"/>
+        <mapping class="org.badmotivator.entity.Diode"/>
+        <mapping class="org.badmotivator.entity.LinearIC"/>
+        <mapping class="org.badmotivator.entity.Resistor"/>
 
     </session-factory>
 

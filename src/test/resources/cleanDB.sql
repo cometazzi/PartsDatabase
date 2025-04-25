@@ -110,7 +110,7 @@ CREATE TABLE `diodes` (
 
 LOCK TABLES `diodes` WRITE;
 /*!40000 ALTER TABLE `diodes` DISABLE KEYS */;
-INSERT INTO `diodes` VALUES (1,20,'ORANGELED','Orange LED',37,19,0.06,NULL),(2,17,'REDLED','Red LED',139,16,0.03,NULL),(3,15,'WHITELED','White LED',20,14,0.05,NULL),(4,16,'BICOLORLED','Bicolor Green/Red LED',6,15,0.12,NULL),(5,17,'BLINKLED','Blinking Red LED',212,16,0.12,NULL),(6,15,'COLORSHIFTFAST','Color Shift LED Fast',10,15,0.46,NULL),(7,15,'COLORSHIFTSLOW','Color Shift LED Slow',9,15,0.46,NULL),(8,18,'BLUELED','Blue LED',47,17,0.06,NULL),(9,19,'YELLOWLED','Yellow LED',154,18,0.03,NULL),(10,17,'LOWPOWERLED','Low Power Red LED',22,16,0.15,NULL),(11,21,'1N34A','Germanium Diode',62,20,1.20,'datasheets/1N34.pdf'),(12,21,'1N60A','Germanium Diode',42,20,0.80,'datasheets/1N60.pdf'),(13,22,'1N4001','Rectifier Diode',57,21,0.02,'datasheets/1N4001.pdf'),(14,22,'1N4004','Rectifier Diode',77,21,0.02,'datasheets/1N4001.pdf'),(15,22,'1N4007','Rectifier Diode',94,21,0.02,'datasheets/1N4001.pdf'),(16,27,'1N4148','Small Signal Diode',167,22,0.02,'datasheets/1N4148.pdf'),(17,27,'1N914','Small Signal Diode',100,22,0.02,'datasheets/1N4148.pdf');
+INSERT INTO `diodes` VALUES (1,20,'ORANGELED','Orange LED',37,20,0.06,NULL),(2,17,'REDLED','Red LED',139,17,0.03,NULL),(3,15,'WHITELED','White LED',20,15,0.05,NULL),(4,16,'BICOLORLED','Bicolor Green/Red LED',16,15,0.12,NULL),(5,17,'BLINKLED','Blinking Red LED',212,17,0.12,NULL),(6,15,'COLORSHIFTFAST','Color Shift LED Fast',10,15,0.46,NULL),(7,15,'COLORSHIFTSLOW','Color Shift LED Slow',9,15,0.46,NULL),(8,18,'BLUELED','Blue LED',47,18,0.06,NULL),(9,19,'YELLOWLED','Yellow LED',154,19,0.03,NULL),(10,17,'LOWPOWERLED','Low Power Red LED',22,17,0.15,NULL),(11,21,'1N34A','Germanium Diode',62,21,1.20,'datasheets/1N34.pdf'),(12,21,'1N60A','Germanium Diode',42,21,0.80,'datasheets/1N60.pdf'),(13,22,'1N4001','Rectifier Diode',57,22,0.02,'datasheets/1N4001.pdf'),(14,22,'1N4004','Rectifier Diode',77,22,0.02,'datasheets/1N4001.pdf'),(15,22,'1N4007','Rectifier Diode',94,22,0.02,'datasheets/1N4001.pdf'),(16,27,'1N4148','Small Signal Diode',167,27,0.02,'datasheets/1N4148.pdf'),(17,27,'1N914','Small Signal Diode',100,27,0.02,'datasheets/1N4148.pdf');
 /*!40000 ALTER TABLE `diodes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-24 17:03:42
+-- Dump completed on 2025-04-24 18:50:48

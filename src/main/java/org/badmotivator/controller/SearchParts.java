@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.Capacitor;
 import org.badmotivator.entity.ChipAmp;
+import org.badmotivator.entity.Diode;
 import org.badmotivator.entity.Transistor;
 import org.badmotivator.persistence.GenericDao;
 
@@ -98,5 +99,24 @@ public class SearchParts extends HttpServlet {
             dispatcher.forward(req, resp);
         } // end chipAmp
 
+        if (partType.equals("diode")) {
+
+            // Create dao
+            GenericDao<Diode> partDao = new GenericDao<>(Diode.class);
+
+            // one or all
+            if (req.getParameter("submit").equals("search")) {  // retrieve one
+                // set values
+                req.setAttribute("diodes", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
+
+            } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
+                // set values
+                req.setAttribute("diodes", partDao.getAll());
+            }
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeResults.jsp");
+            dispatcher.forward(req, resp);
+        } // end diode
     }
 }
