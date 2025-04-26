@@ -2,10 +2,7 @@ package org.badmotivator.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.badmotivator.entity.Capacitor;
-import org.badmotivator.entity.ChipAmp;
-import org.badmotivator.entity.Diode;
-import org.badmotivator.entity.Transistor;
+import org.badmotivator.entity.*;
 import org.badmotivator.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -118,5 +115,25 @@ public class SearchParts extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeResults.jsp");
             dispatcher.forward(req, resp);
         } // end diode
+
+        if (partType.equals("linearIC")) {
+
+            // Create dao
+            GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
+
+            // one or all
+            if (req.getParameter("submit").equals("search")) {  // retrieve one
+                // set values
+                req.setAttribute("linearICs", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
+
+            } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
+                // set values
+                req.setAttribute("linearICs", partDao.getAll());
+            }
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICResults.jsp");
+            dispatcher.forward(req, resp);
+        } // end linearIC
     }
 }

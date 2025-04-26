@@ -2,10 +2,7 @@ package org.badmotivator.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.badmotivator.entity.Capacitor;
-import org.badmotivator.entity.ChipAmp;
-import org.badmotivator.entity.Diode;
-import org.badmotivator.entity.Transistor;
+import org.badmotivator.entity.*;
 import org.badmotivator.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -149,5 +146,29 @@ public class ManageParts extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
             dispatcher.forward(req, resp);
         } // end diode
+
+        if (partType.equals("linearIC")) {
+
+            /// map variables from the form.
+            String selectedPartNum = req.getParameter("partNum");
+            int qty = Integer.parseInt(req.getParameter("newQty"));
+
+            // build daos and objects for manipulation.
+            GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
+            List<LinearIC> linearICList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+            LinearIC linearIC = linearICList.get(0);
+
+            // update object, then write to db
+            linearIC.setQty(qty);
+            partDao.update(linearIC);
+
+
+            req.setAttribute( "updatedLinearIC", partDao.getByPropertyEqual("partNum", selectedPartNum));
+
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
+            dispatcher.forward(req, resp);
+        } // end linearIC
     }
 }
