@@ -42,6 +42,7 @@
   </table>
 
   <br>
-  <p>Click <a href="diodeSearch.jsp">here</a> to return.</p>
+  <p>Click <a href="diodeSearch.jsp">here</a> to return to Diode Search.</p>
+  <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>

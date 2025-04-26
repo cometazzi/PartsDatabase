@@ -170,5 +170,6 @@ public class ManageParts extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
             dispatcher.forward(req, resp);
         } // end linearIC
+
     }
 }

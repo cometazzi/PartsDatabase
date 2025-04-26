@@ -135,5 +135,25 @@ public class SearchParts extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICResults.jsp");
             dispatcher.forward(req, resp);
         } // end linearIC
+
+        if (partType.equals("resistor")) {
+
+            // Create dao
+            GenericDao<Resistor> partDao = new GenericDao<>(Resistor.class);
+
+            // one or all
+            if (req.getParameter("submit").equals("search")) {  // retrieve one
+                // set values
+                req.setAttribute("resistors", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
+
+            } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
+                // set values
+                req.setAttribute("resistors", partDao.getAll());
+            }
+
+            // forward to appropriate results page
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/resistorResults.jsp");
+            dispatcher.forward(req, resp);
+        } // end resistor
     }
 }

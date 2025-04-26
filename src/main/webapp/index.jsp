@@ -22,5 +22,6 @@
 <a href="chipAmpSearch.jsp">Search ChipAmps</a><br>
 <a href="diodeSearch.jsp">Search Diodes</a><br>
 <a href="linearICSearch.jsp">Search Linear ICs</a><br>
+<a href="resistorSearch.jsp">Search Resistors</a><br>
 </body>
 </html>

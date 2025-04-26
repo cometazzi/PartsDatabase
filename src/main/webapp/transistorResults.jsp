@@ -44,6 +44,7 @@
     </table>
 
     <br>
-    <p>Click <a href="transistorSearch.jsp">here</a> to return.</p>
+    <p>Click <a href="transistorSearch.jspSearch.jsp">here</a> to return to Transistor Search.</p>
+    <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>

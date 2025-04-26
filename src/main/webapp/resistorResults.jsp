@@ -6,7 +6,7 @@
 
 <script type="text/javascript" class="init">
     $(document).ready( function () {
-        $('#capacitorTable').DataTable();
+        $('#resistorTable').DataTable();
     } );
 </script>
 
@@ -15,32 +15,31 @@
 
 <div class="container-fluid">
     <h2>${title}: </h2>
-    <table id="capacitorTable" class="display" cellspacing="0" width="100%">
+    <table id="resistorTable" class="display" cellspacing="0" width="100%">
         <thead>
         <th>Image</th>
-        <th>Value</th>
-        <th>Description</th>
+        <th>Part Number</th>
         <th>Quantity</th>
         <th>Cost</th>
-        <th>Details</th>
         </thead>
         <tbody>
-        <c:forEach var="part" items="${capacitors}">
+        <c:forEach var="part" items="${resistors}">
 
             <tr>
                 <td><img src="images/${part.imageUrl}" width="50" height="50"></td>
                 <td>${part.partNum}</td>
-                <td>${part.descr}</td>
                 <td>${part.qty}</td>
                 <td>${part.cost}</td>
-                <td><a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}">View Details</a></td>
             </tr>
         </c:forEach>
+        <br>
+        <em>Resistor quantities are not modifiable</em>
+        <br><br>
         </tbody>
     </table>
 
     <br>
-    <p>Click <a href="capacitorSearch.jsp">here</a> to return to Capacitor Search.</p>
+    <p>Click <a href="resistorSearch.jsp">here</a> to return to Resistor Search.</p>
     <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>
