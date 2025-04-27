@@ -33,7 +33,7 @@
                 <td>${part.descr}</td>
                 <td>${part.qty}</td>
                 <td>${part.cost}</td>
-                <td><a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}">View Details</a></td>
+                <td><a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}"><button type="button" class="btn btn-primary">View Details</button></a></td>
             </tr>
         </c:forEach>
         </tbody>
