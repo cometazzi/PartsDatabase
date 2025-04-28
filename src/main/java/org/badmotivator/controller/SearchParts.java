@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -28,13 +29,19 @@ public class SearchParts extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        // First get user from the session.
+        HttpSession session = req.getSession();
+        String sessionUser = (String) session.getAttribute("userName");
+
+        // log the logging
         Logger logger = LogManager.getLogger(SearchParts.class);
         // first get part type from the form data
         String partType = req.getParameter("partType");
 
-        // test
+        // test 
         logger.debug("hitting SearchParts");
         logger.debug("part type is: " + partType);
+        logger.debug("session user is: " + sessionUser);
 
         if (partType.equals("transistor")) {
 
@@ -51,9 +58,15 @@ public class SearchParts extends HttpServlet {
                 req.setAttribute("transistors", partDao.getAll());
             }
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorResults.jsp");
-            dispatcher.forward(req, resp);
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminTransistorResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end transistor
 
         if (partType.equals("capacitor")) {
@@ -68,12 +81,22 @@ public class SearchParts extends HttpServlet {
 
             } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
                 // set values
+                logger.debug("got all the caps");
                 req.setAttribute("capacitors", partDao.getAll());
             }
 
+            logger.debug("about to forward");
             // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorResults.jsp");
-            dispatcher.forward(req, resp);
+
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminCapacitorResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end capacitor
 
         if (partType.equals("chipAmp")) {
@@ -91,9 +114,15 @@ public class SearchParts extends HttpServlet {
                 req.setAttribute("chipAmps", partDao.getAll());
             }
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpResults.jsp");
-            dispatcher.forward(req, resp);
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminChipAmpResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end chipAmp
 
         if (partType.equals("diode")) {
@@ -111,9 +140,15 @@ public class SearchParts extends HttpServlet {
                 req.setAttribute("diodes", partDao.getAll());
             }
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeResults.jsp");
-            dispatcher.forward(req, resp);
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminDiodeResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end diode
 
         if (partType.equals("linearIC")) {
@@ -131,9 +166,15 @@ public class SearchParts extends HttpServlet {
                 req.setAttribute("linearICs", partDao.getAll());
             }
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICResults.jsp");
-            dispatcher.forward(req, resp);
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminLinearICResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end linearIC
 
         if (partType.equals("resistor")) {
@@ -151,9 +192,15 @@ public class SearchParts extends HttpServlet {
                 req.setAttribute("resistors", partDao.getAll());
             }
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/resistorResults.jsp");
-            dispatcher.forward(req, resp);
+            if ((sessionUser != null) && (sessionUser.equals("admin"))) {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/adminResistorResults.jsp");
+                dispatcher.forward(req, resp);
+
+            } else {
+
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/resistorResults.jsp");
+                dispatcher.forward(req, resp);
+            }
         } // end resistor
     }
 }

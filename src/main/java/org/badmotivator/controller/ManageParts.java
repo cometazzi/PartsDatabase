@@ -95,8 +95,8 @@ public class ManageParts extends HttpServlet {
 
 
             // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
-            dispatcher.forward(req, resp);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
         } // end capacitor
 
         if (partType.equals("chipAmp")) {
