@@ -134,8 +134,8 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(newTransistor);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedCapacitor", partDao.getByPropertyEqual("partNum", newPartNum));
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
+                req.setAttribute( "updatedTransistor", partDao.getByPropertyEqual("partNum", newPartNum));
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
             }
 
@@ -222,26 +222,92 @@ public class AdminManageParts extends HttpServlet {
 
         if (partType.equals("chipAmp")) {
 
-            /// map variables from the form.
-            String selectedPartNum = req.getParameter("partNum");
-            int qty = Integer.parseInt(req.getParameter("newQty"));
+            if (req.getParameter("submit").equals("editChipAmp")) {
+                /// map variables from the form.
+                String selectedPartNum = req.getParameter("partNum");
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                String newTech = req.getParameter("newTech");
+                String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
 
-            // build daos and objects for manipulation.
-            GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
-            List<ChipAmp> chipAmpList = partDao.getByPropertyEqual("partNum", selectedPartNum);
-            ChipAmp chipAmp = chipAmpList.get(0);
+                // build daos and objects for manipulation.
+                GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
+                List<ChipAmp> chipAmpList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                ChipAmp chipAmp = chipAmpList.get(0);
 
-            // update object, then write to db
-            chipAmp.setQty(qty);
-            partDao.update(chipAmp);
+                int chipAmpPkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                chipAmp.setPartNum(newPartNum);
+                chipAmp.setPackageName(chipAmpPkg);
+                chipAmp.setImageUrl(newPkg);
+                chipAmp.setPartNum(newPartNum);
+                chipAmp.setTechnology(newTech);
+                chipAmp.setDescr(newDesc);
+                chipAmp.setQty(newQty);
+                partDao.update(chipAmp);
 
+                req.setAttribute("updatedChipAmp", partDao.getByPropertyEqual("partNum", newPartNum));
+                // forward to appropriate results page
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
 
-            req.setAttribute( "updatedChipAmp", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            else if (req.getParameter("submit").equals("deleteChipAmp")) {
 
+                // get part number
+                String selectedPartNum = req.getParameter("partNum");
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
-            dispatcher.forward(req, resp);
+                // create dao and object
+                GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
+                List<ChipAmp> chipAmpList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                ChipAmp chipAmpToDelete = chipAmpList.get(0);
+
+                // delete part
+                partDao.delete(chipAmpToDelete);
+
+                // forward to appropriate results page
+                req.setAttribute("deletedChipAmp", selectedPartNum);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpDeleteSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
+
+            else if (req.getParameter("submit").equals("addNewChipAmp")) {
+
+                /// map variables from the form.
+                /// map variables from the form.
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                String newTech = req.getParameter("newTech");
+                String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
+
+                // create dao and object
+                GenericDao<ChipAmp> partDao = new GenericDao<>(ChipAmp.class);
+                ChipAmp newChipAmp = new ChipAmp();
+
+                // populate values
+                int chipAmpPkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                newChipAmp.setPartNum(newPartNum);
+                newChipAmp.setPackageName(chipAmpPkg);
+                newChipAmp.setImageUrl(newPkg);
+                newChipAmp.setPartNum(newPartNum);
+                newChipAmp.setTechnology(newTech);
+                newChipAmp.setDescr(newDesc);
+                newChipAmp.setQty(newQty);
+
+                // insert
+                partDao.insert(newChipAmp);
+
+                // forward to appropriate results page
+                req.setAttribute( "updatedChipAmp", partDao.getByPropertyEqual("partNum", newPartNum));
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+
+            }
         } // end chipAmp
 
         if (partType.equals("diode")) {
