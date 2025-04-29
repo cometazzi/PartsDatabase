@@ -66,12 +66,12 @@ public class ManageParts extends HttpServlet {
             partDao.update(transistor);
 
 
-            req.setAttribute( "updatedTransistor", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            req.setAttribute("updatedTransistor", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
             RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
             dispatcher.forward(req, resp);
-            
+
         } // end transistor
 
 
@@ -91,12 +91,12 @@ public class ManageParts extends HttpServlet {
             partDao.update(capacitor);
 
 
-            req.setAttribute( "updatedCapacitor", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            req.setAttribute("updatedCapacitor", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
             // forward to appropriate results page
-                RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
-                dispatcher.forward(req, resp);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
+            dispatcher.forward(req, resp);
         } // end capacitor
 
         if (partType.equals("chipAmp")) {
@@ -115,7 +115,7 @@ public class ManageParts extends HttpServlet {
             partDao.update(chipAmp);
 
 
-            req.setAttribute( "updatedChipAmp", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            req.setAttribute("updatedChipAmp", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
             // forward to appropriate results page
@@ -139,7 +139,7 @@ public class ManageParts extends HttpServlet {
             partDao.update(diode);
 
 
-            req.setAttribute( "updatedDiode", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            req.setAttribute("updatedDiode", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
             // forward to appropriate results page
@@ -163,7 +163,7 @@ public class ManageParts extends HttpServlet {
             partDao.update(linearIC);
 
 
-            req.setAttribute( "updatedLinearIC", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            req.setAttribute("updatedLinearIC", partDao.getByPropertyEqual("partNum", selectedPartNum));
 
 
             // forward to appropriate results page

@@ -84,9 +84,7 @@ public class AdminManageParts extends HttpServlet {
                 // forward to appropriate results page
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("deleteTransistor")) {
+            } else if (req.getParameter("submit").equals("deleteTransistor")) {
 
                 // get part number
                 String selectedPartNum = req.getParameter("partNum");
@@ -103,9 +101,7 @@ public class AdminManageParts extends HttpServlet {
                 req.setAttribute("deletedTransistor", selectedPartNum);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorDeleteSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("addNewTransistor")) {
+            } else if (req.getParameter("submit").equals("addNewTransistor")) {
 
                 /// map variables from the form.
                 /// map variables from the form.
@@ -136,7 +132,7 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(newTransistor);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedTransistor", partDao.getByPropertyEqual("partNum", newPartNum));
+                req.setAttribute("updatedTransistor", partDao.getByPropertyEqual("partNum", newPartNum));
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/transistorUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
             }
@@ -170,9 +166,7 @@ public class AdminManageParts extends HttpServlet {
                 // forward to appropriate results page
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("deleteCapacitor")) {
+            } else if (req.getParameter("submit").equals("deleteCapacitor")) {
 
                 // get part number
                 String selectedPartNum = req.getParameter("partNum");
@@ -189,9 +183,7 @@ public class AdminManageParts extends HttpServlet {
                 req.setAttribute("deletedCapacitor", selectedPartNum);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorDeleteSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("addNewCapacitor")) {
+            } else if (req.getParameter("submit").equals("addNewCapacitor")) {
 
                 /// map variables from the form.
                 String newImage = req.getParameter("capacitorType");
@@ -215,7 +207,7 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(addedCapacitor);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedCapacitor", partDao.getByPropertyEqual("partNum", newPartNum));
+                req.setAttribute("updatedCapacitor", partDao.getByPropertyEqual("partNum", newPartNum));
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/capacitorUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
             }
@@ -255,9 +247,7 @@ public class AdminManageParts extends HttpServlet {
                 // forward to appropriate results page
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("deleteChipAmp")) {
+            } else if (req.getParameter("submit").equals("deleteChipAmp")) {
 
                 // get part number
                 String selectedPartNum = req.getParameter("partNum");
@@ -274,9 +264,7 @@ public class AdminManageParts extends HttpServlet {
                 req.setAttribute("deletedChipAmp", selectedPartNum);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpDeleteSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("addNewChipAmp")) {
+            } else if (req.getParameter("submit").equals("addNewChipAmp")) {
 
                 /// map variables from the form.
                 /// map variables from the form.
@@ -307,7 +295,7 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(newChipAmp);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedChipAmp", partDao.getByPropertyEqual("partNum", newPartNum));
+                req.setAttribute("updatedChipAmp", partDao.getByPropertyEqual("partNum", newPartNum));
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/chipAmpUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
 
@@ -321,7 +309,7 @@ public class AdminManageParts extends HttpServlet {
                 String selectedPartNum = req.getParameter("partNum");
                 String newPkg = req.getParameter("newPkg");
                 String newPartNum = req.getParameter("newPartNum");
-                    String newDesc = req.getParameter("newDesc");
+                String newDesc = req.getParameter("newDesc");
                 int newQty = Integer.parseInt(req.getParameter("newQty"));
                 String newCost = req.getParameter("newCost");
 
@@ -346,9 +334,7 @@ public class AdminManageParts extends HttpServlet {
                 // forward to appropriate results page
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("deleteDiode")) {
+            } else if (req.getParameter("submit").equals("deleteDiode")) {
 
                 // get part number
                 String selectedPartNum = req.getParameter("partNum");
@@ -365,15 +351,13 @@ public class AdminManageParts extends HttpServlet {
                 req.setAttribute("deletedDiode", selectedPartNum);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeDeleteSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("addNewDiode")) {
+            } else if (req.getParameter("submit").equals("addNewDiode")) {
 
                 /// map variables from the form.
                 /// map variables from the form.
                 String newPkg = req.getParameter("newPkg");
                 String newPartNum = req.getParameter("newPartNum");
-                  String newDesc = req.getParameter("newDesc");
+                String newDesc = req.getParameter("newDesc");
                 int newQty = Integer.parseInt(req.getParameter("newQty"));
                 String newCost = req.getParameter("newCost");
 
@@ -396,7 +380,7 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(newDiode);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedDiode", partDao.getByPropertyEqual("partNum", newPartNum));
+                req.setAttribute("updatedDiode", partDao.getByPropertyEqual("partNum", newPartNum));
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
             }
@@ -434,9 +418,7 @@ public class AdminManageParts extends HttpServlet {
                 // forward to appropriate results page
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("deleteLinearIC")) {
+            } else if (req.getParameter("submit").equals("deleteLinearIC")) {
 
                 // get part number
                 String selectedPartNum = req.getParameter("partNum");
@@ -453,9 +435,7 @@ public class AdminManageParts extends HttpServlet {
                 req.setAttribute("deletedLinearIC", selectedPartNum);
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICDeleteSuccess.jsp");
                 dispatcher.forward(req, resp);
-            }
-
-            else if (req.getParameter("submit").equals("addNewLinearIC")) {
+            } else if (req.getParameter("submit").equals("addNewLinearIC")) {
 
                 /// map variables from the form.
                 /// map variables from the form.
@@ -484,7 +464,7 @@ public class AdminManageParts extends HttpServlet {
                 partDao.insert(newLinearIC);
 
                 // forward to appropriate results page
-                req.setAttribute( "updatedLinearIC", partDao.getByPropertyEqual("partNum", newPartNum));
+                req.setAttribute("updatedLinearIC", partDao.getByPropertyEqual("partNum", newPartNum));
                 RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
                 dispatcher.forward(req, resp);
             }

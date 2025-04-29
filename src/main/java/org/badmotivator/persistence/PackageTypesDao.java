@@ -31,7 +31,8 @@ public class PackageTypesDao {
 
     /**
      * update packageTypes
-     * @param packageTypes  PackageTypes to be updated
+     *
+     * @param packageTypes PackageTypes to be updated
      */
     public void update(PackageTypes packageTypes) {
         Session session = sessionFactory.openSession();
@@ -43,7 +44,8 @@ public class PackageTypesDao {
 
     /**
      * insert a new packageTypes
-     * @param packageTypes  PackageTypes to be inserted
+     *
+     * @param packageTypes PackageTypes to be inserted
      */
     public int insert(PackageTypes packageTypes) {
         int id = 0;
@@ -58,6 +60,7 @@ public class PackageTypesDao {
 
     /**
      * Delete a packageTypes
+     *
      * @param packageTypes PackageTypes to be deleted
      */
     public void delete(PackageTypes packageTypes) {
@@ -69,7 +72,8 @@ public class PackageTypesDao {
     }
 
 
-    /** Return a list of all packageTypes
+    /**
+     * Return a list of all packageTypes
      *
      * @return All packageTypes
      */
@@ -80,7 +84,7 @@ public class PackageTypesDao {
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<PackageTypes> query = builder.createQuery(PackageTypes.class);
         Root<PackageTypes> root = query.from(PackageTypes.class);
-        List<PackageTypes> packageTypes = session.createSelectionQuery( query ).getResultList();
+        List<PackageTypes> packageTypes = session.createSelectionQuery(query).getResultList();
 
         logger.debug("The list of packageTypes " + packageTypes);
         session.close();
@@ -101,7 +105,7 @@ public class PackageTypesDao {
         CriteriaQuery<PackageTypes> query = builder.createQuery(PackageTypes.class);
         Root<PackageTypes> root = query.from(PackageTypes.class);
         query.select(root).where(builder.equal(root.get(propertyName), value));
-        List<PackageTypes> packageTypes = session.createSelectionQuery( query ).getResultList();
+        List<PackageTypes> packageTypes = session.createSelectionQuery(query).getResultList();
 
         session.close();
         return packageTypes;
@@ -114,7 +118,7 @@ public class PackageTypesDao {
     public List<PackageTypes> getByPropertyLike(String propertyName, String value) {
         Session session = sessionFactory.openSession();
 
-        logger.debug("Searching for packageTypes with {} = {}",  propertyName, value);
+        logger.debug("Searching for packageTypes with {} = {}", propertyName, value);
 
         HibernateCriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<PackageTypes> query = builder.createQuery(PackageTypes.class);
@@ -123,11 +127,10 @@ public class PackageTypesDao {
 
         query.where(builder.like(propertyPath, "%" + value + "%"));
 
-        List<PackageTypes> packageTypes = session.createQuery( query ).getResultList();
+        List<PackageTypes> packageTypes = session.createQuery(query).getResultList();
         session.close();
         return packageTypes;
     }
-
 
 
 }

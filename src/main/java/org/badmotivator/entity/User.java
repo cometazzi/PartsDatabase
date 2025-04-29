@@ -26,7 +26,10 @@ public class User {
      * Instantiates a new User.
      */
 // empty constructor
-    public User(){};
+    public User() {
+    }
+
+    ;
 
     /**
      * Instantiates a new User.
@@ -37,11 +40,11 @@ public class User {
      * @param email     the email
      */
     public User(String userName, String firstName, String lastName, String email) {
-       this.userName = userName;
-       this.firstName = firstName;
-       this.lastName = lastName;
-       this.email = email;
-   }
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
     /**
      * Gets user name.

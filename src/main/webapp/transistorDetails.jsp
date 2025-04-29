@@ -1,13 +1,13 @@
 <%@include file="taglib.jsp" %>
-<c:import url="head.jsp" />
-<%@page errorPage = "error.jsp" %>
+<c:import url="head.jsp"/>
+<%@page errorPage="error.jsp" %>
 <html>
 <body>
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#transistorTable').DataTable({searching: false});
-    } );
+    });
 </script>
 
 <h2>${param.partNum} Details</h2>
@@ -39,11 +39,12 @@
 <form action="ManageParts" class="form-inline">
     <div class="form-group">
         <label for="newQty">Change Quantity</label>
-        <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty" value="${param.partQty}">
+        <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty"
+               value="${param.partQty}">
         <input type="hidden" id="partNum" name="partNum" value="${param.partNum}">
         <input type="hidden" id="partType" name="partType" value="transistor">
     </div>
-    <button type="submit" name="submit" value="changeQty"  class="btn btn-primary">Update Quantity</button>
+    <button type="submit" name="submit" value="changeQty" class="btn btn-primary">Update Quantity</button>
 </form>
 
 <a href="transistorSearch.jsp">Return to Search Transistors</a><br>

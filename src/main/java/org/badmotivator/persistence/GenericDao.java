@@ -32,7 +32,7 @@ public class GenericDao<T> {
     /**
      * Retrieves an entity by its primary key.
      *
-     * @param id The primary key value.
+     * @param id   The primary key value.
      * @param <ID> The type of the primary key.
      * @return The entity with the given ID, or null if not found.
      */
@@ -105,7 +105,7 @@ public class GenericDao<T> {
      * Supports nested properties using dot notation (e.g., "user.id").
      *
      * @param propertyName The name of the property (can be nested).
-     * @param value The value to compare against.
+     * @param value        The value to compare against.
      * @return A list of matching entities.
      */
     public List<T> getByPropertyEqual(String propertyName, Object value) {
@@ -126,7 +126,7 @@ public class GenericDao<T> {
      * Supports nested properties using dot notation (e.g., "user.email").
      *
      * @param propertyName The name of the string property (can be nested).
-     * @param value The substring to search for.
+     * @param value        The substring to search for.
      * @return A list of matching entities.
      */
     public List<T> getByPropertyLike(String propertyName, String value) {
@@ -146,9 +146,9 @@ public class GenericDao<T> {
      * Helper method that builds a JPA Path from a dot-separated property string.
      * For example, "user.id" becomes root.get("user").get("id").
      *
-     * @param root The root of the criteria query.
+     * @param root         The root of the criteria query.
      * @param propertyPath A dot-separated path to the desired property.
-     * @param <X> The expected type of the property.
+     * @param <X>          The expected type of the property.
      * @return The constructed Path object.
      */
     private <X> Path<X> buildPath(Root<T> root, String propertyPath) {

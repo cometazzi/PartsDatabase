@@ -30,7 +30,7 @@ public class CognitoJWTParser {
     public static JSONObject getHeader(String jwt) {
         try {
             validateJWT(jwt);
-            Decoder dec= Base64.getDecoder();
+            Decoder dec = Base64.getDecoder();
             final byte[] sectionDecoded = dec.decode(jwt.split("\\.")[HEADER]);
             final String jwtSection = new String(sectionDecoded, "UTF-8");
             return new JSONObject(jwtSection);
@@ -50,7 +50,7 @@ public class CognitoJWTParser {
     public static JSONObject getPayload(String jwt) {
         try {
             validateJWT(jwt);
-            Decoder dec= Base64.getDecoder();
+            Decoder dec = Base64.getDecoder();
             final String payload = jwt.split("\\.")[PAYLOAD];
             final byte[] sectionDecoded = dec.decode(payload);
             final String jwtSection = new String(sectionDecoded, "UTF-8");
@@ -71,7 +71,7 @@ public class CognitoJWTParser {
     public static String getSignature(String jwt) {
         try {
             validateJWT(jwt);
-            Decoder dec= Base64.getDecoder();
+            Decoder dec = Base64.getDecoder();
             final byte[] sectionDecoded = dec.decode(jwt.split("\\.")[SIGNATURE]);
             return new String(sectionDecoded, "UTF-8");
         } catch (final Exception e) {

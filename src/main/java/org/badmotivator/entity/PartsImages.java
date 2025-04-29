@@ -40,7 +40,7 @@ public class PartsImages {
     /**
      * Instantiates a new PartImage type.
      *
-     * @param transistors  the transistors
+     * @param transistors   the transistors
      * @param largeImageUrl the URL for the large image
      * @param thumbImageUrl the URL for the thumbnail image
      */

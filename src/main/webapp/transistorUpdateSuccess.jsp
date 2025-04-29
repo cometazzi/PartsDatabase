@@ -1,14 +1,14 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
-<c:set var="title" value="Update Success" />
-<c:import url="head.jsp" />
+<%@page errorPage="error.jsp" %>
+<c:set var="title" value="Update Success"/>
+<c:import url="head.jsp"/>
 
 <body>
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#transistorTable').DataTable();
-    } );
+    });
 </script>
 
 <h2>${title}</h2>
@@ -32,7 +32,9 @@
             <td>${part.qty}</td>
             <td>${part.packageName}</td>
             <td>${part.cost}</td>
-            <td><a href="transistorDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">View Details</a></td>
+            <td>
+                <a href="transistorDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">View
+                    Details</a></td>
         </tr>
     </c:forEach>
     </tbody>

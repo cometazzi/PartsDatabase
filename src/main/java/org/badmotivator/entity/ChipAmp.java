@@ -56,14 +56,14 @@ public class ChipAmp {
     }
 
     public ChipAmp(PackageTypes packageType,
-                      String imageUrl,
-                      String partNum,
-                      String technology,
-                      String descr,
-                      int qty,
-                      int packageName,
-                      String cost,
-                      String datasheetUrl) {
+                   String imageUrl,
+                   String partNum,
+                   String technology,
+                   String descr,
+                   int qty,
+                   int packageName,
+                   String cost,
+                   String datasheetUrl) {
         this.packageType = packageType;
         this.imageUrl = imageUrl;
         this.partNum = partNum;

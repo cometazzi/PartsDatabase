@@ -1,5 +1,5 @@
 <%@include file="taglib.jsp" %>
-<c:import url="head.jsp" />
+<c:import url="head.jsp"/>
 <!--%@page errorPage = "error.jsp" %-->
 <html>
 <body>
@@ -10,7 +10,7 @@
 <br>
 <c:choose>
     <c:when test="${empty userName}">
-        <a href = "logIn">Log in</a>
+        <a href="logIn">Log in</a>
     </c:when>
     <c:otherwise>
         <h3>Welcome ${userName}</h3>

@@ -66,7 +66,7 @@ class CapacitorDaoTest {
     @Test
     void insert() {
         partDao = new GenericDao<>(Capacitor.class);
-        Capacitor newCapacitor = new Capacitor (
+        Capacitor newCapacitor = new Capacitor(
                 "26",
                 "High Voltage Electrolytic",
                 "47uF",
@@ -82,7 +82,6 @@ class CapacitorDaoTest {
         assertEquals(6, partDao.getById(newCapacitorID).getQty());
 
     }
-
 
 
     /**

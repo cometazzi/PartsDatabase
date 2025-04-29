@@ -1,13 +1,13 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
-<c:set var="title" value="Search Results" />
-<c:import url="head.jsp" />
+<%@page errorPage="error.jsp" %>
+<c:set var="title" value="Search Results"/>
+<c:import url="head.jsp"/>
 
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#capacitorTable').DataTable();
-    } );
+    });
 </script>
 
 <html>
@@ -33,7 +33,10 @@
                 <td>${part.descr}</td>
                 <td>${part.qty}</td>
                 <td>${part.cost}</td>
-                <td><a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}"><button type="button" class="btn btn-primary">View Details</button></a></td>
+                <td>
+                    <a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}">
+                        <button type="button" class="btn btn-primary">View Details</button>
+                    </a></td>
             </tr>
         </c:forEach>
         </tbody>

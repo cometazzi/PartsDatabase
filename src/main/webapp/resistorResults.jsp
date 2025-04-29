@@ -1,13 +1,13 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
-<c:set var="title" value="Search Results" />
-<c:import url="head.jsp" />
+<%@page errorPage="error.jsp" %>
+<c:set var="title" value="Search Results"/>
+<c:import url="head.jsp"/>
 
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#resistorTable').DataTable();
-    } );
+    });
 </script>
 
 <html>

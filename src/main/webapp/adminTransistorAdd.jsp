@@ -12,16 +12,16 @@
 
         <table>
             <tr>
-            <td><label for="newPkg">Select Package</label>
-            <select name="newPkg" id="newPkg">
-                <option value="9">TO-3</option>
-                <option value="10">TO-5</option>
-                <option value="11">TO-18</option>
-                <option value="12">TO-92</option>
-                <option value="13">TO-126</option>
-                <option value="14">TO-220</option>
-            </select>
-            </td>
+                <td><label for="newPkg">Select Package</label>
+                    <select name="newPkg" id="newPkg">
+                        <option value="9">TO-3</option>
+                        <option value="10">TO-5</option>
+                        <option value="11">TO-18</option>
+                        <option value="12">TO-92</option>
+                        <option value="13">TO-126</option>
+                        <option value="14">TO-220</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td><label for="newPartNum">Enter Part Number</label></td>

@@ -1,13 +1,13 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
-<c:set var="title" value="Search Results" />
-<c:import url="head.jsp" />
+<%@page errorPage="error.jsp" %>
+<c:set var="title" value="Search Results"/>
+<c:import url="head.jsp"/>
 
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#chipAmpTable').DataTable();
-    } );
+    });
 </script>
 
 <html>
@@ -37,7 +37,10 @@
                 <td>${part.qty}</td>
                 <td>${part.packageName}</td>
                 <td>${part.cost}</td>
-                <td><a href="adminChipAmpDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}"><button type="button" class="btn btn-primary">Edit Details</button></a></td>
+                <td>
+                    <a href="adminChipAmpDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">
+                        <button type="button" class="btn btn-primary">Edit Details</button>
+                    </a></td>
             </tr>
         </c:forEach>
         </tbody>

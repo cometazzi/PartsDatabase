@@ -1,6 +1,6 @@
 <%@include file="taglib.jsp" %>
-<%@page isErrorPage = "true" %>
-<c:set var="title" value="Error Has Occured!" />
+<%@page isErrorPage="true" %>
+<c:set var="title" value="Error Has Occured!"/>
 <html>
 <body>
 <h1>Oh Noes!</h1>

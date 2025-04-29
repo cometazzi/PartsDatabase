@@ -1,13 +1,13 @@
 <%@include file="taglib.jsp" %>
-<%@page errorPage = "error.jsp" %>
-<c:set var="title" value="Search Results" />
-<c:import url="head.jsp" />
+<%@page errorPage="error.jsp" %>
+<c:set var="title" value="Search Results"/>
+<c:import url="head.jsp"/>
 
 
 <script type="text/javascript" class="init">
-    $(document).ready( function () {
+    $(document).ready(function () {
         $('#linearICTable').DataTable();
-    } );
+    });
 </script>
 
 <html>
@@ -35,7 +35,10 @@
                 <td>${part.qty}</td>
                 <td>${part.packageName}</td>
                 <td>${part.cost}</td>
-                <td><a href="linearICDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}"><button type="button" class="btn btn-primary">View Details</button></a></td>
+                <td>
+                    <a href="linearICDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">
+                        <button type="button" class="btn btn-primary">View Details</button>
+                    </a></td>
             </tr>
         </c:forEach>
         </tbody>

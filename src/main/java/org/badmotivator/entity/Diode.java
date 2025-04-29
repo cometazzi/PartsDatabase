@@ -53,13 +53,13 @@ public class Diode {
     }
 
     public Diode(PackageTypes packageType,
-                      String imageUrl,
-                      String partNum,
-                      String descr,
-                      int qty,
-                      int packageName,
-                      String cost,
-                      String datasheetUrl) {
+                 String imageUrl,
+                 String partNum,
+                 String descr,
+                 int qty,
+                 int packageName,
+                 String cost,
+                 String datasheetUrl) {
         this.packageType = packageType;
         this.imageUrl = imageUrl;
         this.partNum = partNum;
