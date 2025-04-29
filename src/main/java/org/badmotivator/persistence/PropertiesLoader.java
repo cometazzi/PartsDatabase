@@ -18,11 +18,9 @@ public interface PropertiesLoader{
         try {
             properties.load(this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioException) {
-            //ioException.printStackTrace();
             logger.error("Error reading properties file: " + ioException);
             throw ioException;
         } catch (Exception exception) {
-            //exception.printStackTrace();
             logger.error("Error reading properties file: " + exception);
             throw exception;
         }
