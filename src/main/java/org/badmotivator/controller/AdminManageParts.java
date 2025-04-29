@@ -312,26 +312,88 @@ public class AdminManageParts extends HttpServlet {
 
         if (partType.equals("diode")) {
 
-            /// map variables from the form.
-            String selectedPartNum = req.getParameter("partNum");
-            int qty = Integer.parseInt(req.getParameter("newQty"));
+            if (req.getParameter("submit").equals("editDiode")) {
+                /// map variables from the form.
+                String selectedPartNum = req.getParameter("partNum");
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                    String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
 
-            // build daos and objects for manipulation.
-            GenericDao<Diode> partDao = new GenericDao<>(Diode.class);
-            List<Diode> diodeList = partDao.getByPropertyEqual("partNum", selectedPartNum);
-            Diode diode = diodeList.get(0);
+                // build daos and objects for manipulation.
+                GenericDao<Diode> partDao = new GenericDao<>(Diode.class);
+                List<Diode> diodeList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                Diode diode = diodeList.get(0);
 
-            // update object, then write to db
-            diode.setQty(qty);
-            partDao.update(diode);
+                int diodePkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                diode.setPartNum(newPartNum);
+                diode.setPackageName(diodePkg);
+                diode.setImageUrl(newPkg);
+                diode.setPartNum(newPartNum);
+                diode.setDescr(newDesc);
+                diode.setQty(newQty);
+                partDao.update(diode);
 
+                req.setAttribute("updatedDiode", partDao.getByPropertyEqual("partNum", newPartNum));
+                // forward to appropriate results page
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
 
-            req.setAttribute( "updatedDiode", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            else if (req.getParameter("submit").equals("deleteDiode")) {
 
+                // get part number
+                String selectedPartNum = req.getParameter("partNum");
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
-            dispatcher.forward(req, resp);
+                // create dao and object
+                GenericDao<Diode> partDao = new GenericDao<>(Diode.class);
+                List<Diode> diodeList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                Diode diodeToDelete = diodeList.get(0);
+
+                // delete part
+                partDao.delete(diodeToDelete);
+
+                // forward to appropriate results page
+                req.setAttribute("deletedDiode", selectedPartNum);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeDeleteSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
+
+            else if (req.getParameter("submit").equals("addNewDiode")) {
+
+                /// map variables from the form.
+                /// map variables from the form.
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                  String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
+
+                // create dao and object
+                GenericDao<Diode> partDao = new GenericDao<>(Diode.class);
+                Diode newDiode = new Diode();
+
+                // populate values
+                int diodePkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                newDiode.setPartNum(newPartNum);
+                newDiode.setPackageName(diodePkg);
+                newDiode.setImageUrl(newPkg);
+                newDiode.setPartNum(newPartNum);
+                newDiode.setDescr(newDesc);
+                newDiode.setQty(newQty);
+
+                // insert
+                partDao.insert(newDiode);
+
+                // forward to appropriate results page
+                req.setAttribute( "updatedDiode", partDao.getByPropertyEqual("partNum", newPartNum));
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/diodeUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
+
         } // end diode
 
         if (partType.equals("linearIC")) {

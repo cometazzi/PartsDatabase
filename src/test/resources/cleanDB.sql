@@ -101,7 +101,7 @@ CREATE TABLE `diodes` (
                           KEY `diodes_package_types_id_fk_2` (`package_type`),
                           CONSTRAINT `diodes_package_types_id_fk` FOREIGN KEY (`image_url`) REFERENCES `package_types` (`id`),
                           CONSTRAINT `diodes_package_types_id_fk_2` FOREIGN KEY (`package_type`) REFERENCES `package_types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `package_types` (
 
 LOCK TABLES `package_types` WRITE;
 /*!40000 ALTER TABLE `package_types` DISABLE KEYS */;
-INSERT INTO `package_types` VALUES (1,'DIP-4','Dual-Inline Package, 2 Leads Per Side'),(2,'DIP-6','Dual-Inline Package, 3 Leads Per Side'),(3,'DIP-8','Dual-Inline Package, 4 Leads Per Side'),(4,'DIP-14','Dual-Inline Package, 7 Leads Per Side'),(5,'DIP-16','Dual-Inline Package, 8 Leads Per Side'),(6,'DIP-18','Dual-Inline Package, 9 Leads Per Side'),(7,'DIP-28','Dual-Inline Package, 14 Leads Per Side'),(8,'SIP-8','Single-Inline Package, 8 Leads In A Row'),(9,'TO-3','Large Metal Package, Chassis-Mount'),(10,'TO-5','Small Metal Package, 8.9mm Diameter'),(11,'TO-18','Small Metal Package, 4.7mm Diameter'),(12,'TO-92','Small Molded Plastic Package, 5mm Width'),(13,'TO-126','Square Flat Composite Package 8mm Width'),(14,'TO-220','Large Square Composite Package with Heatsink Mount'),(15,'WHITELED','White LED'),(16,'BICOLORLED','Bi-Color LED'),(17,'REDLED','Red LED'),(18,'BLUELED','Blue LED'),(19,'YELLOWLED','Yellow LED'),(20,'ORANGELED','Orange LED'),(21,'DO-3','NOS Germanium Diode'),(22,'DO-5','Silicon Rectifier Diode'),(23,'R-1','Radial Metal Film Resistor'),(24,'C-1','Ceramic Disc Capacitor'),(25,'C-2','Mylar Polyfilm Capacitor'),(26,'C-3','Aluminum Body Electrolytic Capacitor'),(27,'DO-4','Glass-bodied Silicon Diode');
+INSERT INTO `package_types` VALUES (1,'DIP-4','Dual-Inline Package, 2 Leads Per Side'),(2,'DIP-6','Dual-Inline Package, 3 Leads Per Side'),(3,'DIP-8','Dual-Inline Package, 4 Leads Per Side'),(4,'DIP-14','Dual-Inline Package, 7 Leads Per Side'),(5,'DIP-16','Dual-Inline Package, 8 Leads Per Side'),(6,'DIP-18','Dual-Inline Package, 9 Leads Per Side'),(7,'DIP-28','Dual-Inline Package, 14 Leads Per Side'),(8,'SIP-8','Single-Inline Package, 8 Leads In A Row'),(9,'TO-3','Large Metal Package, Chassis-Mount'),(10,'TO-5','Small Metal Package, 8.9mm Diameter'),(11,'TO-18','Small Metal Package, 4.7mm Diameter'),(12,'TO-92','Small Molded Plastic Package, 5mm Width'),(13,'TO-126','Square Flat Composite Package 8mm Width'),(14,'TO-220','Large Square Composite Package with Heatsink Mount'),(15,'WhiteLED','White LED'),(16,'BIColorLED','Bi-Color LED'),(17,'RedLED','Red LED'),(18,'BlueLED','Blue LED'),(19,'YellowLED','Yellow LED'),(20,'OrangeLED','Orange LED'),(21,'DO-3','NOS Germanium Diode'),(22,'DO-5','Silicon Rectifier Diode'),(23,'R-1','Radial Metal Film Resistor'),(24,'C-1','Ceramic Disc Capacitor'),(25,'C-2','Mylar Polyfilm Capacitor'),(26,'C-3','Aluminum Body Electrolytic Capacitor'),(27,'DO-4','Glass-bodied Silicon Diode');
 /*!40000 ALTER TABLE `package_types` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +193,7 @@ CREATE TABLE `partsImages` (
 
 LOCK TABLES `partsImages` WRITE;
 /*!40000 ALTER TABLE `partsImages` DISABLE KEYS */;
-INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'DIP-20','dip20.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg'),(15,'whiteLED','whiteLED.jpg'),(16,'bicolorLED','bicolorLED.jpg'),(17,'redLED','redLED.jpg'),(18,'blueLED','blueLED.jpg'),(19,'yellowLED','yellowLED.jpg'),(20,'orangeLED','orangeLED.jpg'),(21,'DO-3','germanium.jpg'),(22,'DO-5','rectifier.jpg'),(23,'R-1','resistor.jpg'),(24,'C-1','ceramicCap.jpg'),(25,'C-2','mylarCap.jpg'),(26,'C-3','electroCap.jpg'),(27,'DO-4','glassDiode.jpg');
+INSERT INTO `partsImages` VALUES (1,'DIP-4','dip4.jpg'),(2,'DIP-6','dip6.jpg'),(3,'DIP-8','dip8.jpg'),(4,'DIP-14','dip14.jpg'),(5,'DIP-16','dip16.jpg'),(6,'DIP-18','dip18.jpg'),(7,'DIP-20','dip20.jpg'),(8,'SIP-8','sip8.jpg'),(9,'TO-3','to3.jpg'),(10,'TO-5','to5.jpg'),(11,'TO-18','to18.jpg'),(12,'TO-92','to92.jpg'),(13,'TO-126','to126.jpg'),(14,'TO-220','to220.jpg'),(15,'WhiteLED','whiteLED.jpg'),(16,'BIColorLED','bicolorLED.jpg'),(17,'RedLED','redLED.jpg'),(18,'BlueLED','blueLED.jpg'),(19,'YelloLED','yellowLED.jpg'),(20,'OrangeLED','orangeLED.jpg'),(21,'DO-3','germanium.jpg'),(22,'DO-5','rectifier.jpg'),(23,'R-1','resistor.jpg'),(24,'C-1','ceramicCap.jpg'),(25,'C-2','mylarCap.jpg'),(26,'C-3','electroCap.jpg'),(27,'DO-4','glassDiode.jpg');
 /*!40000 ALTER TABLE `partsImages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-24 18:50:48
+-- Dump completed on 2025-04-28 19:10:02
