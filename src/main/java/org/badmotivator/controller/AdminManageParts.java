@@ -34,15 +34,15 @@ public class AdminManageParts extends HttpServlet {
         HttpSession session = req.getSession();
         String sessionUser = (String) session.getAttribute("userName");
 
-    /*
+
         // If not admin logged in, send them to logIn Servlet.
-        // Let Cognito sort 'em out
-        if (!sessionUser.equals("admin")) {
+        // Deflect 'em all, let Cognito sort 'em out
+        if ((sessionUser == null) || (!sessionUser.equals("admin"))) {
 
             resp.sendRedirect("logIn");
             return;
         }
-    */
+
         Logger logger = LogManager.getLogger(AdminManageParts.class);
         // first get part type from the form data
         String partType = req.getParameter("partType");
