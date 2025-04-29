@@ -77,6 +77,7 @@ public class AdminManageParts extends HttpServlet {
                 transistor.setTechnology(newTech);
                 transistor.setDescr(newDesc);
                 transistor.setQty(newQty);
+                transistor.setCost(newCost);
                 partDao.update(transistor);
 
                 req.setAttribute("updatedTransistor", partDao.getByPropertyEqual("partNum", newPartNum));
@@ -129,6 +130,7 @@ public class AdminManageParts extends HttpServlet {
                 newTransistor.setTechnology(newTech);
                 newTransistor.setDescr(newDesc);
                 newTransistor.setQty(newQty);
+                newTransistor.setCost(newCost);
 
                 // insert
                 partDao.insert(newTransistor);
@@ -246,6 +248,7 @@ public class AdminManageParts extends HttpServlet {
                 chipAmp.setTechnology(newTech);
                 chipAmp.setDescr(newDesc);
                 chipAmp.setQty(newQty);
+                chipAmp.setCost(newCost);
                 partDao.update(chipAmp);
 
                 req.setAttribute("updatedChipAmp", partDao.getByPropertyEqual("partNum", newPartNum));
@@ -298,6 +301,7 @@ public class AdminManageParts extends HttpServlet {
                 newChipAmp.setTechnology(newTech);
                 newChipAmp.setDescr(newDesc);
                 newChipAmp.setQty(newQty);
+                newChipAmp.setCost(newCost);
 
                 // insert
                 partDao.insert(newChipAmp);
@@ -334,7 +338,9 @@ public class AdminManageParts extends HttpServlet {
                 diode.setPartNum(newPartNum);
                 diode.setDescr(newDesc);
                 diode.setQty(newQty);
+                diode.setCost(newCost);
                 partDao.update(diode);
+
 
                 req.setAttribute("updatedDiode", partDao.getByPropertyEqual("partNum", newPartNum));
                 // forward to appropriate results page
@@ -384,6 +390,7 @@ public class AdminManageParts extends HttpServlet {
                 newDiode.setPartNum(newPartNum);
                 newDiode.setDescr(newDesc);
                 newDiode.setQty(newQty);
+                newDiode.setCost(newCost);
 
                 // insert
                 partDao.insert(newDiode);
@@ -398,26 +405,90 @@ public class AdminManageParts extends HttpServlet {
 
         if (partType.equals("linearIC")) {
 
-            /// map variables from the form.
-            String selectedPartNum = req.getParameter("partNum");
-            int qty = Integer.parseInt(req.getParameter("newQty"));
+            if (req.getParameter("submit").equals("editLinearIC")) {
+                /// map variables from the form.
+                String selectedPartNum = req.getParameter("partNum");
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
 
-            // build daos and objects for manipulation.
-            GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
-            List<LinearIC> linearICList = partDao.getByPropertyEqual("partNum", selectedPartNum);
-            LinearIC linearIC = linearICList.get(0);
+                // build daos and objects for manipulation.
+                GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
+                List<LinearIC> linearICList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                LinearIC linearIC = linearICList.get(0);
 
-            // update object, then write to db
-            linearIC.setQty(qty);
-            partDao.update(linearIC);
+                int linearICPkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                linearIC.setPartNum(newPartNum);
+                linearIC.setPackageName(linearICPkg);
+                linearIC.setImageUrl(newPkg);
+                linearIC.setPartNum(newPartNum);
+                linearIC.setDescr(newDesc);
+                linearIC.setQty(newQty);
+                linearIC.setCost(newCost);
+                partDao.update(linearIC);
 
+                req.setAttribute("updatedLinearIC", partDao.getByPropertyEqual("partNum", newPartNum));
+                // forward to appropriate results page
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
 
-            req.setAttribute( "updatedLinearIC", partDao.getByPropertyEqual("partNum", selectedPartNum));
+            else if (req.getParameter("submit").equals("deleteLinearIC")) {
 
+                // get part number
+                String selectedPartNum = req.getParameter("partNum");
 
-            // forward to appropriate results page
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
-            dispatcher.forward(req, resp);
+                // create dao and object
+                GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
+                List<LinearIC> linearICList = partDao.getByPropertyEqual("partNum", selectedPartNum);
+                LinearIC linearICToDelete = linearICList.get(0);
+
+                // delete part
+                partDao.delete(linearICToDelete);
+
+                // forward to appropriate results page
+                req.setAttribute("deletedLinearIC", selectedPartNum);
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICDeleteSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
+
+            else if (req.getParameter("submit").equals("addNewLinearIC")) {
+
+                /// map variables from the form.
+                /// map variables from the form.
+                String newPkg = req.getParameter("newPkg");
+                String newPartNum = req.getParameter("newPartNum");
+                String newDesc = req.getParameter("newDesc");
+                int newQty = Integer.parseInt(req.getParameter("newQty"));
+                String newCost = req.getParameter("newCost");
+
+                // create dao and object
+                GenericDao<LinearIC> partDao = new GenericDao<>(LinearIC.class);
+                LinearIC newLinearIC = new LinearIC();
+
+                // populate values
+                int linearICPkg = Integer.parseInt(newPkg);
+                // update object, then write to db
+                newLinearIC.setPartNum(newPartNum);
+                newLinearIC.setPackageName(linearICPkg);
+                newLinearIC.setImageUrl(newPkg);
+                newLinearIC.setPartNum(newPartNum);
+                newLinearIC.setDescr(newDesc);
+                newLinearIC.setQty(newQty);
+                newLinearIC.setCost(newCost);
+
+                // insert
+                partDao.insert(newLinearIC);
+
+                // forward to appropriate results page
+                req.setAttribute( "updatedLinearIC", partDao.getByPropertyEqual("partNum", newPartNum));
+                RequestDispatcher dispatcher = req.getRequestDispatcher("/linearICUpdateSuccess.jsp");
+                dispatcher.forward(req, resp);
+            }
+
         } // end linearIC
 
     }
