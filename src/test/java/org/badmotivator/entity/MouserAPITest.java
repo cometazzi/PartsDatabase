@@ -18,7 +18,7 @@ public class MouserAPITest {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Test
     public void testMouserJSON() throws Exception {
-        String apiKey = "redacted again";
+        String apiKey = "redacted";
         String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
         String keyword = "2n3904";
         int recordsPerPage = 1;
