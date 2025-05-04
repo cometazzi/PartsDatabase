@@ -18,9 +18,9 @@ public class MouserAPITest {
     private final Logger logger = LogManager.getLogger(this.getClass());
     @Test
     public void testMouserJSON() throws Exception {
-        String apiKey = "redacted";
+        String apiKey = "cb07eb7a-d182-4786-8bfd-ef63d3ec38a8";
         String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
-        String keyword = "2n3904";
+        String keyword = "1N4148";
         int recordsPerPage = 1;
         int startingRecord = 1;
 
@@ -51,11 +51,11 @@ public class MouserAPITest {
 
         // Get the response status code
         int statusCode = response.getStatus();
-        logger.info("Status Code: " + statusCode);
+        System.out.println("Status Code: " + statusCode);
 
         // Get the response body as a String
         String responseBody = response.readEntity(String.class);
-        logger.info("Response Body:\n" + responseBody);
+        System.out.println("Response Body:\n" + responseBody);
 
         // Use Jackson to parse the JSON and map to APITransistor
         ObjectMapper objectMapper = new ObjectMapper();
@@ -66,39 +66,36 @@ public class MouserAPITest {
 
         if (partsNode.isArray() && partsNode.size() > 0) {
             JsonNode firstPart = partsNode.get(0);
-            String mouserPartNumber = firstPart.path("MouserPartNumber").asText();
+            APITransistor transistor = new APITransistor();
+
+            transistor.setMouserPartNumber(firstPart.path("MouserPartNumber").asText());
+            transistor.setAvailability(firstPart.path("Availability").asText());
+            transistor.setDataSheetUrl(firstPart.path("DataSheetUrl").asText());
+            transistor.setDescription(firstPart.path("Description").asText());
+
             JsonNode priceBreaksNode = firstPart.path("PriceBreaks");
-
-            BigDecimal unitPrice = null;
-            String currency = null;
-
             if (priceBreaksNode.isArray()) {
                 for (JsonNode priceBreak : priceBreaksNode) {
                     int quantity = priceBreak.path("Quantity").asInt();
+                    String priceStr = priceBreak.path("Price").asText().replace("$", "");
+                    BigDecimal price = new BigDecimal(priceStr);
+                    String currency = priceBreak.path("Currency").asText();
                     if (quantity == 1) {
-                        String priceStr = priceBreak.path("Price").asText().replace("$", "");
-                        unitPrice = new BigDecimal(priceStr);
-                        currency = priceBreak.path("Currency").asText();
-                        break; // Found the price for quantity 1, so we can stop
+                        transistor.setPriceFor1(price);
+                        transistor.setCurrency(currency); // Assuming currency is the same for all price breaks
+                    } else if (quantity == 10) {
+                        transistor.setPriceFor10(price);
+                    } else if (quantity == 100) {
+                        transistor.setPriceFor100(price);
                     }
                 }
             }
 
-            // Create and populate the APITransistor object
-            if (mouserPartNumber != null && unitPrice != null && currency != null) {
-                APITransistor transistor = new APITransistor();
-                transistor.setMouserPartNumber(mouserPartNumber);
-                transistor.setUnitPrice(unitPrice);
-                transistor.setCurrency(currency);
-
-                logger.info("\nMapped APITransistor Object:");
-                logger.info(transistor);
-            } else {
-                logger.info("\nCould not find MouserPartNumber or Unit Price (Quantity 1) in the response.");
-            }
+            System.out.println("\nMapped APITransistor Object:");
+            System.out.println(transistor);
 
         } else {
-            logger.info("\nNo parts found in the search results.");
+            System.out.println("\nNo parts found in the search results.");
         }
 
         // Close the client
