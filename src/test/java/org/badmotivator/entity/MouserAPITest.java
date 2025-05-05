@@ -1,7 +1,7 @@
 package org.badmotivator.entity;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mouser.APITransistor;
+import com.mouser.APIPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class MouserAPITest {
     public void testMouserJSON() throws Exception {
         String apiKey = "tweaked";
         String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
-        String keyword = "1N4148";
+        String keyword = "56pf";
         int recordsPerPage = 1;
         int startingRecord = 1;
 
@@ -51,13 +51,13 @@ public class MouserAPITest {
 
         // Get the response status code
         int statusCode = response.getStatus();
-        System.out.println("Status Code: " + statusCode);
+        logger.info("Status Code: " + statusCode);
 
         // Get the response body as a String
         String responseBody = response.readEntity(String.class);
-        System.out.println("Response Body:\n" + responseBody);
+        logger.info("Response Body:\n" + responseBody);
 
-        // Use Jackson to parse the JSON and map to APITransistor
+        // Use Jackson to parse the JSON and map to APIPart
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(responseBody);
 
@@ -66,12 +66,12 @@ public class MouserAPITest {
 
         if (partsNode.isArray() && partsNode.size() > 0) {
             JsonNode firstPart = partsNode.get(0);
-            APITransistor transistor = new APITransistor();
+            APIPart apiPart = new APIPart();
 
-            transistor.setMouserPartNumber(firstPart.path("MouserPartNumber").asText());
-            transistor.setAvailability(firstPart.path("Availability").asText());
-            transistor.setDataSheetUrl(firstPart.path("DataSheetUrl").asText());
-            transistor.setDescription(firstPart.path("Description").asText());
+            apiPart.setMouserPartNumber(firstPart.path("MouserPartNumber").asText());
+            apiPart.setAvailability(firstPart.path("Availability").asText());
+            apiPart.setDataSheetUrl(firstPart.path("DataSheetUrl").asText());
+            apiPart.setDescription(firstPart.path("Description").asText());
 
             JsonNode priceBreaksNode = firstPart.path("PriceBreaks");
             if (priceBreaksNode.isArray()) {
@@ -81,21 +81,21 @@ public class MouserAPITest {
                     BigDecimal price = new BigDecimal(priceStr);
                     String currency = priceBreak.path("Currency").asText();
                     if (quantity == 1) {
-                        transistor.setPriceFor1(price);
-                        transistor.setCurrency(currency); // Assuming currency is the same for all price breaks
+                        apiPart.setPriceFor1(price);
+                        apiPart.setCurrency(currency); // Assuming currency is the same for all price breaks
                     } else if (quantity == 10) {
-                        transistor.setPriceFor10(price);
+                        apiPart.setPriceFor10(price);
                     } else if (quantity == 100) {
-                        transistor.setPriceFor100(price);
+                        apiPart.setPriceFor100(price);
                     }
                 }
             }
 
-            System.out.println("\nMapped APITransistor Object:");
-            System.out.println(transistor);
+            logger.info("\nMapped APIPart Object:");
+            logger.info(apiPart);
 
         } else {
-            System.out.println("\nNo parts found in the search results.");
+            logger.info("\nNo parts found in the search results.");
         }
 
         // Close the client

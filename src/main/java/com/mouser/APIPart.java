@@ -2,7 +2,7 @@ package com.mouser;
 
 import java.math.BigDecimal;
 
-public class APITransistor {
+public class APIPart {
     private String mouserPartNumber;
     private String availability;
     private String dataSheetUrl;
@@ -13,7 +13,7 @@ public class APITransistor {
     private String currency;
 
     // Default constructor (required by Jackson)
-    public APITransistor() {
+    public APIPart() {
     }
 
     public String getMouserPartNumber() {
@@ -82,7 +82,7 @@ public class APITransistor {
 
     @Override
     public String toString() {
-        return "APITransistor{" +
+        return "APIPart{" +
                 "mouserPartNumber='" + mouserPartNumber + '\'' +
                 ", availability='" + availability + '\'' +
                 ", dataSheetUrl='" + dataSheetUrl + '\'' +

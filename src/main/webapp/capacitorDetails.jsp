@@ -15,10 +15,8 @@
 <table id="capacitorTable" class="display" cellspacing="0" width="100%">
     <thead>
     <th>Part Number</th>
-    <th>Technology</th>
     <th>Description</th>
     <th>Quantity</th>
-    <th>Package Type</th>
     <th>Cost</th>
     </thead>
     <tbody>
