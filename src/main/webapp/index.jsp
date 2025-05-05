@@ -14,6 +14,7 @@
     </c:when>
     <c:otherwise>
         <h3>Welcome ${userName}</h3>
+        <a href="logOut">Log out</a>
     </c:otherwise>
 </c:choose>
 <br>
