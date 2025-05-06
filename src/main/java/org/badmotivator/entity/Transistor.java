@@ -260,7 +260,6 @@ public class Transistor {
 
     }
 
-
     @Override
     public String toString() {
         return "Transistor{" +

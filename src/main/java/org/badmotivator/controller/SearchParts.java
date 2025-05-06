@@ -1,5 +1,6 @@
 package org.badmotivator.controller;
 
+import com.mouser.APIPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.badmotivator.entity.*;
@@ -52,6 +53,7 @@ public class SearchParts extends HttpServlet {
             if (req.getParameter("submit").equals("search")) {  // retrieve one
                 // set values
                 req.setAttribute("transistors", partDao.getByPropertyLike("partNum", req.getParameter("searchTerm")));
+
 
             } else if (req.getParameter("submit").equals("viewAll")) { // retrieve all
                 // set values
