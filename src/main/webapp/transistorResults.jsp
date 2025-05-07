@@ -40,7 +40,8 @@
                 <td>
                     <a href="transistorMarketDetails?partNum=${part.partNum}">
                         <button type="button" class="btn btn-primary">View Details</button>
-                    </a></td>
+                    </a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

@@ -34,16 +34,17 @@
                 <td>${part.qty}</td>
                 <td>${part.cost}</td>
                 <td>
-                    <a href="capacitorDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partCost=${part.cost}">
+                    <a href="capacitorMarketDetails?partNum=${part.partNum}">
                         <button type="button" class="btn btn-primary">View Details</button>
-                    </a></td>
+                    </a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 
     <br>
-    <p>Click <a href="capacitorSearch.jsp">here</a> to return to Capacitor Search.</p>
+    <p>Click <a href="capacitorSearch.jspSearch.jsp">here</a> to return to Capacitor Search.</p>
     <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>

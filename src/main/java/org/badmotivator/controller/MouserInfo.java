@@ -35,7 +35,7 @@ public class MouserInfo {
 
     // Get data from Mouser API
     public APIPart getMouserInfo(String keyword) throws Exception {
-        String apiKey = "tweaky-deaky";
+        String apiKey = "cb07eb7a-d182-4786-8bfd-ef63d3ec38a8";
         String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
         int recordsPerPage = 1;
         int startingRecord = 1;
