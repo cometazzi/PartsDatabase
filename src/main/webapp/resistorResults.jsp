@@ -18,7 +18,7 @@
     <table id="resistorTable" class="display" cellspacing="0" width="100%">
         <thead>
         <th>Image</th>
-        <th>Part Number</th>
+        <th>Value</th>
         <th>Quantity</th>
         <th>Cost</th>
         </thead>

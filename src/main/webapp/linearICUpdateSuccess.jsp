@@ -31,14 +31,16 @@
             <td>${part.packageName}</td>
             <td>${part.cost}</td>
             <td>
-                <a href="linearICDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">View
-                    Details</a></td>
+                <a href="linearICMarketDetails?partNum=${part.partNum}">
+                    <button type="button" class="btn btn-primary">View Details</button>
+                </a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <br>
-<a href="linearICSearch.jsp">Return to Search LinearICs</a><br>
-<a href="index.jsp">Return to Index</a><br>
+<p>Click <a href="linearICSearch.jsp">here</a> to return to Linear IC Search.</p>
+<p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 </body>
 </html>
