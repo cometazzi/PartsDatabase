@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mouser.APIPart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.badmotivator.entity.Transistor;
+import org.badmotivator.util.PropertiesLoader;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -13,11 +13,38 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Properties;
 
-public class MouserInfo {
+public class MouserInfo implements PropertiesLoader {
 
+    Properties properties;
     private final Logger logger = LogManager.getLogger(this.getClass());
+
+
+    String apiKey;
+    String searchUrl;
+    int recordsPerPage;
+    int startingRecord;
+
+    public MouserInfo() {
+        loadProperties();
+    }
+
+    private void loadProperties() {
+        try {
+            this.properties = loadProperties("/mouser.properties");
+            this.apiKey = properties.getProperty("apikey");
+            this.searchUrl = properties.getProperty("search.url");
+            this.recordsPerPage = Integer.parseInt(properties.getProperty("records.per.page"));
+            this.startingRecord = Integer.parseInt(properties.getProperty("starting.record"));
+        } catch (IOException ioException) {
+            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
+        } catch (Exception e) {
+            logger.error("Error loading properties" + e.getMessage(), e);
+        }
+    }
 
     public APIPart getTransistorMktInfo(String partNumb) throws Exception {
 
@@ -35,10 +62,6 @@ public class MouserInfo {
 
     // Get data from Mouser API
     public APIPart getMouserInfo(String keyword) throws Exception {
-        String apiKey = "cb07eb7a-d182-4786-8bfd-ef63d3ec38a8";
-        String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
-        int recordsPerPage = 1;
-        int startingRecord = 1;
 
         // Construct the JSON request body using String.format
         String requestBody = String.format(
