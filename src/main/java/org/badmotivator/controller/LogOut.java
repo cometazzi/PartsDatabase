@@ -40,7 +40,7 @@ public class LogOut extends HttpServlet implements PropertiesLoader {
             logoutURL = properties.getProperty("logoutURL");
             logoutRedirectURL = properties.getProperty("logoutRedirectURL"); // Load the new property
             if (logoutRedirectURL == null || logoutRedirectURL.trim().isEmpty()) {
-                logger.warn("logoutRedirectURL is not set in cognito.properties. Cognito logout redirect might not work as expected.");
+                logger.error("logoutRedirectURL is not set in cognito.properties. Cognito logout redirect might not work as expected.");
             }
         } catch (IOException ioException) {
             logger.error("Cannot load properties..." + ioException.getMessage(), ioException);

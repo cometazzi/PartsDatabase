@@ -19,33 +19,23 @@ public class MouserInfo {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    public Transistor enhanceTransistor(Transistor transistor) throws Exception {
+    public APIPart getTransistorMktInfo(String partNumb) throws Exception {
 
         // create APIPart object
-        APIPart mktData = new APIPart();
+        APIPart mkData = new APIPart();
 
         // populate APIPart object with mouser data
-        mktData = getMouserInfo(transistor.getPartNum());
+        mkData = getMouserInfo(partNumb);
 
-        /* map to transistor fields
-        transistor.setMouserPartNum(mktData.getMouserPartNumber());
-        transistor.setMouserAvail(mktData.getAvailability());
-        transistor.setMouserDataSheetURL(mktData.getDataSheetUrl());
-        transistor.setMouserDescr(mktData.getDescription());
-        transistor.setMouserPrice1(mktData.getPriceFor1().toString());
-        transistor.setMouserPrice10(mktData.getPriceFor10().toString());
-        transistor.setMouserPrice100(mktData.getPriceFor100().toString());
-        */
-        // return enhanced transistor, with mouser data
-        return transistor;
+        return mkData;
 
 
     }
 
 
     // Get data from Mouser API
-    private APIPart getMouserInfo(String keyword) throws Exception {
-        String apiKey = "cb07eb7a-d182-4786-8bfd-ef63d3ec38a8";
+    public APIPart getMouserInfo(String keyword) throws Exception {
+        String apiKey = "tweaky-deaky";
         String searchUrl = "https://api.mouser.com/api/v2/search/keyword";
         int recordsPerPage = 1;
         int startingRecord = 1;

@@ -42,11 +42,14 @@
             <tr>
                 <td><label for="newPkg">Select Package</label>
                     <select name="newPkg" id="newPkg">
-                        <option value="9">TO-3</option>
-                        <option value="10">TO-5</option>
-                        <option value="11">TO-18</option>
-                        <option value="12">TO-92</option>
-                        <option value="13">TO-126</option>
+                        <option value="1">DIP-4</option>
+                        <option value="2">DIP-6</option>
+                        <option value="3">DIP-8</option>
+                        <option value="4">DIP-14</option>
+                        <option value="5">DIP-16</option>
+                        <option value="6">DIP-18</option>
+                        <option value="7">DIP-28</option>
+                        <option value="8">SIP-8</option>
                         <option value="14">TO-220</option>
                     </select>
                 </td>

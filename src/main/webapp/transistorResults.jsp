@@ -38,7 +38,7 @@
                 <td>${part.packageName}</td>
                 <td>${part.cost}</td>
                 <td>
-                    <a href="transistorDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">
+                    <a href="transistorMarketDetails?partNum=${part.partNum}">
                         <button type="button" class="btn btn-primary">View Details</button>
                     </a></td>
             </tr>
