@@ -40,7 +40,10 @@
     </tbody>
 </table>
 <br>
-<a href="chipAmpSearch.jsp">Return to Search ChipAmps</a><br>
-<a href="index.jsp">Return to Index</a><br>
+<td>
+    <a href="chipAmpMarketDetails?partNum=${part.partNum}">
+        <button type="button" class="btn btn-primary">View Details</button>
+    </a>
+</td>
 </body>
 </html>

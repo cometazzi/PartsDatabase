@@ -36,7 +36,10 @@
     </tbody>
 </table>
 <br>
-<a href="capacitorSearch.jsp">Return to Search Capacitors</a><br>
-<a href="index.jsp">Return to Index</a><br>
+<td>
+    <a href="capacitorMarketDetails?partNum=${part.partNum}">
+        <button type="button" class="btn btn-primary">View Details</button>
+    </a>
+</td>
 </body>
 </html>

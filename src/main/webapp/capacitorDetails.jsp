@@ -23,7 +23,16 @@
 
         </dd>
     </dl>
-
+    <form action="ManageParts" class="form-inline">
+        <div class="form-group">
+            <label for="newQty">Change Quantity</label>
+            <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty"
+                   value="${capacitor.qty}">
+            <input type="hidden" id="partNum" name="partNum" value="${param.partNum}">
+            <input type="hidden" id="partType" name="partType" value="capacitor">
+        </div>
+        <button type="submit" name="submit" value="changeQty" class="btn btn-primary">Update Quantity</button>
+    </form>
     <br>
     <h4>Market Details Provided by Mouser.com:</h4>
     <c:if test="${not empty apiPart}">

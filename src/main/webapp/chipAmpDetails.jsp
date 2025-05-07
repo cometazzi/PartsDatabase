@@ -4,51 +4,80 @@
 <html>
 <body>
 
-<script type="text/javascript" class="init">
-    $(document).ready(function () {
-        $('#chipAmpTable').DataTable({searching: false});
-    });
-</script>
+<div class="container-fluid">
+    <h2>${title}</h2>
 
-<h2>${param.partNum} Details</h2>
+    <h4>Database Details:</h4>
+    <dl class="row">
+        <dt class="col-sm-3">Part Number:</dt>
+        <dd class="col-sm-9">${chipAmp.partNum}</dd>
 
-<table id="chipAmpTable" class="display" cellspacing="0" width="100%">
-    <thead>
-    <th>Part Number</th>
-    <th>Technology</th>
-    <th>Description</th>
-    <th>Quantity</th>
-    <th>Package Type</th>
-    <th>Cost</th>
-    </thead>
-    <tbody>
+        <dt class="col-sm-3">Technology:</dt>
+        <dd class="col-sm-9">${chipAmp.technology}</dd>
 
-    <tr>
-        <td>${param.partNum}</td>
-        <td>${param.partTech}</td>
-        <td>${param.partDesc}</td>
-        <td>${param.partQty}</td>
-        <td>${param.partPkg}</td>
-        <td>${param.partCost}</td>
+        <dt class="col-sm-3">Description:</dt>
+        <dd class="col-sm-9">${chipAmp.descr}</dd>
 
-    </tr>
-    </tbody>
-</table>
+        <dt class="col-sm-3">Quantity:</dt>
+        <dd class="col-sm-9">${chipAmp.qty}</dd>
 
+        <dt class="col-sm-3">Package Type:</dt>
+        <dd class="col-sm-9">${chipAmp.packageName}</dd>
 
-<form action="ManageParts" class="form-inline">
-    <div class="form-group">
-        <label for="newQty">Change Quantity</label>
-        <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty"
-               value="${param.partQty}">
-        <input type="hidden" id="partNum" name="partNum" value="${param.partNum}">
-        <input type="hidden" id="partType" name="partType" value="chipAmp">
-    </div>
-    <button type="submit" name="submit" value="changeQty" class="btn btn-primary">Update Quantity</button>
-</form>
+        <dt class="col-sm-3">Cost:</dt>
+        <dd class="col-sm-9">${chipAmp.cost}</dd>
 
-<a href="chipAmpSearch.jsp">Return to Search ChipAmps</a><br>
-<a href="index.jsp">Return to Index</a><br>
+        </dd>
+    </dl>
+    <form action="ManageParts" class="form-inline">
+        <div class="form-group">
+            <label for="newQty">Change Quantity</label>
+            <input type="text" class="form-control" id="newQty" name="newQty" aria-describedby="newQty"
+                   value="${chipAmp.qty}">
+            <input type="hidden" id="partNum" name="partNum" value="${param.partNum}">
+            <input type="hidden" id="partType" name="partType" value="chipAmp">
+        </div>
+        <button type="submit" name="submit" value="changeQty" class="btn btn-primary">Update Quantity</button>
+    </form>
+    <br>
+    <h4>Market Details Provided by Mouser.com:</h4>
+    <c:if test="${not empty apiPart}">
+        <dl class="row">
+            <dt class="col-sm-3">Mouser Part Number:</dt>
+            <dd class="col-sm-9">${apiPart.mouserPartNumber}</dd>
+
+            <dt class="col-sm-3">Availability:</dt>
+            <dd class="col-sm-9">${apiPart.availability}</dd>
+
+            <dt class="col-sm-3">Description (Mouser):</dt>
+            <dd class="col-sm-9">${apiPart.description}</dd>
+
+            <dt class="col-sm-3">Price For 1:</dt>
+            <dd class="col-sm-9">${apiPart.currency} ${apiPart.priceFor1}</dd>
+
+            <dt class="col-sm-3">Price For 10:</dt>
+            <dd class="col-sm-9">${apiPart.currency} ${apiPart.priceFor10}</dd>
+
+            <dt class="col-sm-3">Price For 100:</dt>
+            <dd class="col-sm-9">${apiPart.currency} ${apiPart.priceFor100}</dd>
+
+            <dt class="col-sm-3">Datasheet (Mouser):</dt>
+            <dd class="col-sm-9">
+                <a href="${apiPart.dataSheetUrl}" target="_blank">Click Here</a>
+            </dd>
+        </dl>
+    </c:if>
+    <c:if test="${empty apiPart}">
+        <p>Mouser market data not available for this part.</p>
+    </c:if>
+    <c:if test="${not empty mouserError}">
+        <p class="text-danger">${mouserError}</p>
+    </c:if>
+
+    <br>
+    <p><a href="chipAmpSearch.jsp">Back to ChipAmp Search</a></p>
+    <p><a href="index.jsp">Back to Part Search</a></p>
+</div>
 
 </body>
 </html>
