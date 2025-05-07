@@ -36,9 +36,10 @@
                 <td>${part.packageName}</td>
                 <td>${part.cost}</td>
                 <td>
-                    <a href="diodeDetails.jsp?partNum=${part.partNum}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">
+                    <a href="diodeMarketDetails?partNum=${part.partNum}">
                         <button type="button" class="btn btn-primary">View Details</button>
-                    </a></td>
+                    </a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>
