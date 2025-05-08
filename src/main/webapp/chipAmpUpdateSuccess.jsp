@@ -33,17 +33,18 @@
             <td>${part.packageName}</td>
             <td>${part.cost}</td>
             <td>
-                <a href="chipAmpDetails.jsp?partNum=${part.partNum}&partTech=${part.technology}&partDesc=${part.descr}&partQty=${part.qty}&partPkg=${part.packageName}&partCost=${part.cost}">View
-                    Details</a></td>
+                <a href="chipAmpMarketDetails?partNum=${part.partNum}">
+                    <button type="button" class="btn btn-primary">View Details</button>
+                </a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <br>
 <td>
-    <a href="chipAmpMarketDetails?partNum=${part.partNum}">
-        <button type="button" class="btn btn-primary">View Details</button>
-    </a>
+    <p>Click <a href="chipAmpSearch.jsp">here</a> to return to ChipAmp Search.</p>
+    <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 </td>
 </body>
 </html>

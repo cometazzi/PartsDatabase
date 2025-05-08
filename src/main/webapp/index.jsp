@@ -19,10 +19,10 @@
 </c:choose>
 <br>
 <a href="capacitorSearch.jsp">Search Capacitors</a><br>
-<a href="transistorSearch.jsp">Search Transistors</a><br>
 <a href="chipAmpSearch.jsp">Search ChipAmps</a><br>
 <a href="diodeSearch.jsp">Search Diodes</a><br>
 <a href="linearICSearch.jsp">Search Linear ICs</a><br>
 <a href="resistorSearch.jsp">Search Resistors</a><br>
+<a href="transistorSearch.jsp">Search Transistors</a><br>
 </body>
 </html>

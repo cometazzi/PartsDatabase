@@ -60,6 +60,11 @@
                            aria-describedby="newPartNum" value="${param.partNum}"></td>
             </tr>
             <tr>
+                <td><label for="newPartNum">Change Technology Type</label></td>
+                <td><input type="text" class="form-control" id="newTech" name="newTech"
+                           aria-describedby="newTech" value="${param.partTech}"></td>
+            </tr>
+            <tr>
 
                 <td><label for="newDesc">Change Description</label></td>
                 <td><input type="text" class="form-control" id="newDesc" name="newDesc" aria-describedby="newDesc"
