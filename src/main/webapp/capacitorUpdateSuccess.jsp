@@ -28,11 +28,14 @@
             <td>${part.descr}</td>
             <td>${part.qty}</td>
             <td>${part.cost}</td>
+            <td>
             <a href="capacitorMarketDetails?partNum=${part.partNum}">
                 <button type="button" class="btn btn-primary">View Details</button>
             </a>
+            <td>
         </tr>
     </c:forEach>
+
     </tbody>
 </table>
 <br>

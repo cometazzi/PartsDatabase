@@ -48,7 +48,7 @@
     </table>
 
     <br>
-    <p>Click <a href="chipAmpSearch.jspSearch.jsp">here</a> to return to ChipAmp Search.</p>
+    <p>Click <a href="chipAmpSearch.jsp">here</a> to return to ChipAmp Search.</p>
     <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>

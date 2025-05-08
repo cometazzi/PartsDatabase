@@ -44,7 +44,7 @@
     </table>
 
     <br>
-    <p>Click <a href="capacitorSearch.jspSearch.jsp">here</a> to return to Capacitor Search.</p>
+    <p>Click <a href="capacitorSearch.jsp">here</a> to return to Capacitor Search.</p>
     <p>Click <a href="index.jsp">here</a> to return to Part Search</p>
 
 </div>
