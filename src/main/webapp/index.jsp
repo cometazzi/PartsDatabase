@@ -1,6 +1,6 @@
 <%@include file="taglib.jsp" %>
 <c:import url="head.jsp"/>
-<!--%@page errorPage = "error.jsp" %-->
+<!%@page errorPage = "error.jsp" %>
 <html>
 <body>
 
@@ -17,6 +17,8 @@
         <a href="logOut">Log out</a>
     </c:otherwise>
 </c:choose>
+<br>
+<br>
 <br>
 <a href="capacitorSearch.jsp">Search Capacitors</a><br>
 <a href="chipAmpSearch.jsp">Search ChipAmps</a><br>
