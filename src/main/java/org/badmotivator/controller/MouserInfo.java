@@ -46,20 +46,6 @@ public class MouserInfo implements PropertiesLoader {
         }
     }
 
-    public APIPart getTransistorMktInfo(String partNumb) throws Exception {
-
-        // create APIPart object
-        APIPart mkData = new APIPart();
-
-        // populate APIPart object with mouser data
-        mkData = getMouserInfo(partNumb);
-
-        return mkData;
-
-
-    }
-
-
     // Get data from Mouser API
     public APIPart getMouserInfo(String keyword) throws Exception {
 
