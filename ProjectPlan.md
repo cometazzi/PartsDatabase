@@ -65,12 +65,11 @@
 - [X] Double-check all checkpoint 3 items (above) are complete and visible in github.
 
 ### Week 15
-- [ ] Implement Feedback from Week 14 review
-- [ ] Final Presentation
-- [ ] Create video, add video link to readme.md
-- [ ] Finalize all documentation
-- [ ] Code quality check
-- [ ] Weekly journal entry
+- [X] Final Presentation
+- [X] Create video, add video link to readme.md
+- [X] Finalize all documentation
+- [X] Code quality check
+- [X] Weekly journal entry
 
 ### Week 16
 - [ ] Weekly journal entry

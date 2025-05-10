@@ -17,11 +17,11 @@ PartsDatabase is an inventory system to catalogue electronic parts, pieces, modu
 * Dependency Management
     * Maven
 * Web Services consumed using Java
-    * TBD
+    * Mouser Web API
 * Web Services consuming an API
-    * TBD
+    * Mouser Web API
 * CSS
-    * Bootstrap or Materialize. Possibly another (TBD)
+    * Bootstrap 
 * Data Validation
     * Bootstrap Validator for front end
     * Explore Hibernate Validator?
@@ -30,12 +30,7 @@ PartsDatabase is an inventory system to catalogue electronic parts, pieces, modu
 * Hosting
     * AWS
 * Tech I might explore as part of this work
-    * CI tools in AWS
-    * Materialize
-    * Google Maps API
-    * Hibernate Validator
     * Hibernate Search
-* Project Lombok
 * Unit Testing
     * JUnit tests to cover all testable logic
 * IDE: IntelliJ IDEA
@@ -54,3 +49,7 @@ Choose a format that works for you, or create your own.
 
 #### [Journal](Journal.md)
 #### [TimeLog](TimeLog.md)
+
+### Links To Videos:
+[User Demo](https://youtu.be/y64D7Eg03-M)
+[Code Demo](https://youtu.be/luAjoLDzJ28)

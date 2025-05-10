@@ -45,3 +45,34 @@ Mon - 6 hours
 Tue - 9 hours
 Wed - 5.5 hours
 Thur - 2.5 hours
+
+### Week 10
+Mon - 6 hours
+Tue - 8 hours
+Wed - 8 hours
+Thur - 8 hours
+Fri - 6 hours
+
+### Week 11
+none
+
+### Week 12
+none
+
+### Week 13
+Mon - 8 hours
+Tue - 7 hours
+Wed - 6.5 hours
+Fri - 3 hours
+
+### Week 14
+Mon - 7 hours
+Tue - 7 hours
+Wed - 7 hours
+
+### Week 15
+Mon - 6 hours
+Tue - 4 hours
+Wed - 4 hours
+Fri - 4 hours
+Sat - 4 hours
