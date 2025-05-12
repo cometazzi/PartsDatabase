@@ -1,6 +1,6 @@
 # User Stories
 
-The first eleven user stories are part of the MVP.
+The first ten user stories are part of the MVP.
 
 ### Find Parts
 As any user, I want to be able to search the database by category (part type) so I can see a listing of all the parts of
@@ -23,23 +23,24 @@ As a registered user, I want to be able to sign in so that I can have read and u
 As a registered user, I want to be able to change the parts quantities as I remove or restore parts to the database.
 
 ### Change Profile
-As a registered user, I want to be able to manage my profile and any of my personal information.
-As a registered user, I want to be able to change my password
+As a registered user, I want to be able to manage my profile and any of my personal information. (For Version 2)
+As a registered user, I want to be able to change my password (Replaced by Cognito)
 
 ### Login
 As an Admin, I want to require users to register and log into the database to make any changes. 
 
 ### User Administration
-As an administrator, I want to be able to add, update, and delete users.
+As an administrator, I want to be able to add, update, and delete users.  (Replaced by Cognito)
 
 ### Parts Administration
 As an administrator, I want to be able to manage parts quantities, attributes, and add or remove parts entries entirely.
 
-### Activity Logging
-As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts 
-  quantity changes, and the editing/creation/deletion of parts entries and users.
 
--- MVP Ends Here--
+-- MVP Ends Here.  The below stories are for Version 2--
+
+### Activity Logging
+As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts
+quantity changes, and the editing/creation/deletion of parts entries and users.
 
 ### Manage Inventory Sources
 As an administrator, I want to create a profile for every source of parts, be it a manufacturer, vendor, event (like 
