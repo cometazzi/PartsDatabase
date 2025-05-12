@@ -33,8 +33,8 @@
 ### Week 5
 - [X] Create JSP for searching parts 
 - [X] Create JSP for showing parts search results (Read user story)
-- [ ] Create JSP for editing or deleting parts entries (Admin) (Update and Delete user stories)
-- [ ] Create JSP for adding parts entries (Admin) (Create user story)
+- [X] Create JSP for editing or deleting parts entries (Admin) (Update and Delete user stories)
+- [X] Create JSP for adding parts entries (Admin) (Create user story)
 - [X] Create controller to route to parts search jsp
 - [X] Update weekly reflection
 
@@ -45,7 +45,7 @@
 - [X] Create and populate LinearICs table, create entity, Dao and TestDao
 - [X] Create and populate LogicICs table, create entity, Dao and TestDao
 - [X] Create and populate Resistors table, create entity, Dao and TestDao
-- [ ] Test all new items
+- [X] Test all new items
 
 ### Week 7
 #### Checkpoint 2 is Due: Database designed and created, at least one DAO with full CRUD (create, read, update, delete) implemented with Hibernate, DAO is fully unit tested, Log4J is implemented (no System.out.printlns)
@@ -58,7 +58,7 @@
 - [X] Add deployed link to indie project list in student repo
 
 ### Week 8
-- [ ] all JSPs completed.
+- [X] all JSPs completed.
 
 ### Week 9 (Start of the team project)
 #### Checkpoint 3 is Due: Deployed to AWS, at least one JSP that displays data from the database is implemented, authentication implemented, add AWS deployed app link to indie project list in student repo.
@@ -72,5 +72,5 @@
 - [X] Weekly journal entry
 
 ### Week 16
-- [ ] Weekly journal entry
-- [ ] Final touches before code complete
+- [X] Weekly journal entry
+- [X] Final touches before code complete

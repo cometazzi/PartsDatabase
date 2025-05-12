@@ -76,3 +76,6 @@ Tue - 4 hours
 Wed - 4 hours
 Fri - 4 hours
 Sat - 4 hours
+
+### Week 16
+Mon - 4 hours

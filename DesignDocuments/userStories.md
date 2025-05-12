@@ -17,17 +17,16 @@ As any user, I want to be able to view design specifications, and access manufac
 As a user, I want to be able to sign up so that I can become a registered user with more than only read access.
 
 ### Sign In
-As a registered user, I want to be able to sign in so that I can have read and update privileges in the database.
+As a registered user, I want to be able to sign in so that I can have read and update privileges in the database application.
 
 ### Consume parts
 As a registered user, I want to be able to change the parts quantities as I remove or restore parts to the database.
 
-### Change Profile
-As a registered user, I want to be able to manage my profile and any of my personal information. (For Version 2)
+### Change Password
 As a registered user, I want to be able to change my password (Replaced by Cognito)
 
 ### Login
-As an Admin, I want to require users to register and log into the database to make any changes. 
+As an Admin, I want to require users to register and log into the database application to make any changes. 
 
 ### User Administration
 As an administrator, I want to be able to add, update, and delete users.  (Replaced by Cognito)
@@ -37,6 +36,9 @@ As an administrator, I want to be able to manage parts quantities, attributes, a
 
 
 -- MVP Ends Here.  The below stories are for Version 2--
+
+### Profile Management
+As a registered user, I want to be able to manage my profile and any of my personal information.
 
 ### Activity Logging
 As an administrator, I want activity to be timestamped and logged.  This would include users logging in or out, parts
