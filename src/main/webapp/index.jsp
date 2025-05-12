@@ -1,8 +1,8 @@
 <%@include file="taglib.jsp" %>
 <c:import url="head.jsp"/>
 <!%@page errorPage = "error.jsp" %>
-<html>
-<body>
+<html lang="en"> <head> <title>Parts Database</title> </head>
+<!--body style="padding-left: 20px; font-family: sans-serif;" -->
 
 <h2>Parts Database</h2>
 

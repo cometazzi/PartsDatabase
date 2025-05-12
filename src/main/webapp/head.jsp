@@ -28,3 +28,12 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
 
 </head>
+<body style="padding-left: 20px; font-family: sans-serif;">
+<style>
+    a {
+        text-decoration: none; /* Remove underlines from links for a cleaner look */
+    }
+    a:hover {
+        text-decoration: underline; /* Add underline on hover for better interaction */
+    }
+</style>

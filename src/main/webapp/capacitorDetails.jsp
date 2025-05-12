@@ -34,8 +34,8 @@
         <button type="submit" name="submit" value="changeQty" class="btn btn-primary">Update Quantity</button>
     </form>
     <br>
-    <h4>Market Details Provided by Mouser.com:</h4>
     <c:if test="${not empty apiPart}">
+        <h4>Market Details Provided by Mouser.com:</h4>
         <dl class="row">
             <dt class="col-sm-3">Mouser Part Number:</dt>
             <dd class="col-sm-9">${apiPart.mouserPartNumber}</dd>
@@ -57,7 +57,12 @@
 
             <dt class="col-sm-3">Datasheet (Mouser):</dt>
             <dd class="col-sm-9">
-                <a href="${apiPart.dataSheetUrl}" target="_blank">Click Here</a>
+                <c:if test="${empty apiPart.dataSheetUrl}">
+                    <p>Datasheet Not Available</p>
+                </c:if>
+                <c:if test="${not empty apiPart.dataSheetUrl}">
+                    <a href="${apiPart.dataSheetUrl}" target="_blank">Click Here</a>
+                </c:if>
             </dd>
         </dl>
     </c:if>
