@@ -13,7 +13,7 @@ PartsDatabase is an inventory system to catalogue electronic parts, pieces, modu
 * Database
     * MySQL 8.x
 * ORM Framework
-    * Hibernate Version TBD
+    * Hibernate 
 * Dependency Management
     * Maven
 * Web Services consumed using Java
@@ -24,7 +24,6 @@ PartsDatabase is an inventory system to catalogue electronic parts, pieces, modu
     * Bootstrap 
 * Data Validation
     * Bootstrap Validator for front end
-    * Explore Hibernate Validator?
 * Logging
     * Log4J2
 * Hosting
